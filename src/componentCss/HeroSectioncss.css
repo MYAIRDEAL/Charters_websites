@@ -1,0 +1,39 @@
+/* styles.css */
+
+/* Container for the image to ensure overflow is hidden */
+.animationContainer {
+    position: relative;
+    overflow: hidden;
+    /* Hide the part of the image that is outside the container */
+    width: 100%;
+    max-width: 40rem;
+    /* Adjust as needed */
+    height: auto;
+    /* Adjust as needed */
+}
+
+/* Styles for the animated image */
+.customAnimation {
+    display: block;
+    /* Ensures the image is treated as a block element */
+    position: absolute;
+    /* Positioning the image absolutely within the container */
+    transform: translateY(100%);
+    /* Start with the image hidden below the view */
+    opacity: 0;
+    animation: loadFromBottom 2s ease-out forwards;
+    /* Adjust timing and easing as needed */
+}
+
+/* Keyframes for the animation */
+@keyframes loadFromBottom {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
