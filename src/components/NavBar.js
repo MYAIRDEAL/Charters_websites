@@ -35,9 +35,9 @@ function NavBar() {
                 <div className={`hidden md:flex md:w-[35rem]`}>
                     <ul className='flex items-center font-semibold transition-all duration-200 justify-around flex-grow'>
                         <li className='hover:text-hoverColor cursor-pointer'> <Link to={'/'}>Home</Link> </li>
-                        <li className='hover:text-hoverColor cursor-pointer'>About Us</li>
-                        <li className='hover:text-hoverColor cursor-pointer'>Services</li>
-                        <li className='hover:text-hoverColor cursor-pointer'>Packages</li>
+                        <li className='hover:text-hoverColor cursor-pointer'><Link to={'/aboutus'}>About Us</Link></li>
+                        <li className='hover:text-hoverColor cursor-pointer'> <Link to={'/services'} > Services </Link> </li>
+                        <li className='hover:text-hoverColor cursor-pointer'> <Link to={'/packages'}> Packages </Link> </li>
                         <li className='hover:text-hoverColor cursor-pointer'> <Link to={'/blogs'}>Blogs</Link> </li>
                         <li className='hover:text-hoverColor cursor-pointer'> <Link to={'/contactus'}>Contact Us</Link> </li>
                     </ul>

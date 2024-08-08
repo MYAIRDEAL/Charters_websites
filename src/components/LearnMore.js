@@ -24,7 +24,6 @@ function LearnMore() {
 
             <div className=' w-[60rem] justify-around flex flex-wrap mb-[10rem]  md:mb-0'>
 
-
                 <div className=' w-[16rem] p-3 m-3'>
                     <div>
                         <h1 className='text-hoverColor text-[2rem] font-semibold'>

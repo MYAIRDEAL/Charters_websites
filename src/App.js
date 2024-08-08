@@ -10,6 +10,10 @@ import ContactUs from './components/ContactUs';
 import AllAvailableCharters from './components/AllAvailableCharters';
 import Footer from './components/Footer';
 import Blog from './components/Blog'
+import AboutUs from './components/AboutUs';
+import OurServicesPage from './components/OurServicesPage';
+import PackagePage from './pages/PackagePage';
+import AdminPanel from './components/AdminPanel';
 
 
 function App() {
@@ -22,8 +26,12 @@ function App() {
         <NavBar />
         <Routes>
           <Route path="/" element={<MainHomeComp />} />
-          <Route path='/contactus' element={<ContactUs />} />
+          <Route path='/aboutus' element={<AboutUs />} />
+          <Route path='/services' element={<OurServicesPage />} />
+          <Route path='/packages' element={<PackagePage />} />
           <Route path='/blogs' element={<Blog />} />
+          <Route path='/admin' element={<AdminPanel />} />
+          <Route path='/contactus' element={<ContactUs />} />
           <Route path='/allavailablecharters' element={<AllAvailableCharters />} />
         </Routes>
 
