@@ -1,5 +1,5 @@
 import React from 'react'
-import PageBanner from './PageBanner'
+import PageBanner from '../pages/PageBanner'
 import AboutFlight from './AboutFlight'
 import OurServices from './OurServices'
 import AirportCount from './AirportCount'

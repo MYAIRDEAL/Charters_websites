@@ -62,8 +62,6 @@ function HeroSection() {
     return (
         <>
 
-
-
             <div>
                 <div className="relative w-full md:h-[90vh] h-[50vh]  overflow-hidden rounded-lg">
                     <div className="relative w-full h-full flex items-center justify-center">
@@ -71,11 +69,7 @@ function HeroSection() {
                             <div
                                 key={index}
                                 className={`absolute inset-0 flex items-center justify-center transition-opacity duration-700 ease-in-out ${index === currentSlide ? 'opacity-100' : 'opacity-0'}`}
-
                             >
-
-
-
                                 <div className='text-white md:h-[89.6vh] flex flex-col md:flex-row md:justify-around'>
                                     {/* Social Media Icons */}
                                     <div className='md:flex hidden flex-col items-center md:items-start md:justify-center mb-4 md:mb-0'>
@@ -108,16 +102,12 @@ function HeroSection() {
                                             </p>
                                         </div>
                                         <div className='m-4'>
-                                            <button className='border border-hoverColor text-hoverColor p-3 w-[7rem] tracking-widest text-sm md:text-base'>
+                                            <button className='border border-hoverColor text-hoverColor p-3 w-[7rem] tracking-widest rounded-lg text-sm md:text-base hover:scale-110 transition-all duration-300'>
                                                 Book Now
                                             </button>
                                         </div>
                                     </div>
                                 </div>
-
-
-
-
                             </div>
                         ))}
                     </div>

@@ -12,7 +12,9 @@ function NavBar() {
             <div className='flex items-center justify-between h-[5rem] px-4 md:px-8'>
                 {/* Logo */}
                 <div className='w-[10rem] h-[4rem] flex items-center justify-center cursor-pointer'>
-                    <img src={heroicon} alt="Logo" className='h-full object-contain' />
+                    <Link to={'/'}>
+                        <img src={heroicon} alt="Logo" className='h-full object-contain' />
+                    </Link>
                 </div>
 
                 {/* Toggle Button for Mobile Menu */}
@@ -34,19 +36,19 @@ function NavBar() {
                 {/* Navigation Links */}
                 <div className={`hidden md:flex md:w-[35rem]`}>
                     <ul className='flex items-center font-semibold transition-all duration-200 justify-around flex-grow'>
-                        <li className='hover:text-hoverColor cursor-pointer'> <Link to={'/'}>Home</Link> </li>
-                        <li className='hover:text-hoverColor cursor-pointer'><Link to={'/aboutus'}>About Us</Link></li>
-                        <li className='hover:text-hoverColor cursor-pointer'> <Link to={'/services'} > Services </Link> </li>
-                        <li className='hover:text-hoverColor cursor-pointer'> <Link to={'/packages'}> Packages </Link> </li>
-                        <li className='hover:text-hoverColor cursor-pointer'> <Link to={'/blogs'}>Blogs</Link> </li>
-                        <li className='hover:text-hoverColor cursor-pointer'> <Link to={'/contactus'}>Contact Us</Link> </li>
+                        <li className='hover:text-hoverColor cursor-pointer hover:scale-105 transition-all duration-200 '> <Link to={'/'}>Home</Link> </li>
+                        <li className='hover:text-hoverColor cursor-pointer hover:scale-105 transition-all duration-200 '><Link to={'/aboutus'}>About Us</Link></li>
+                        <li className='hover:text-hoverColor cursor-pointer hover:scale-105 transition-all duration-200 '> <Link to={'/services'} > Services </Link> </li>
+                        <li className='hover:text-hoverColor cursor-pointer hover:scale-105 transition-all duration-200 '> <Link to={'/packages'}> Packages </Link> </li>
+                        <li className='hover:text-hoverColor cursor-pointer hover:scale-105 transition-all duration-200 '> <Link to={'/blogs'}>Blogs</Link> </li>
+                        <li className='hover:text-hoverColor cursor-pointer hover:scale-105 transition-all duration-200 '> <Link to={'/contactus'}>Contact Us</Link> </li>
                     </ul>
                 </div>
 
                 {/* Enquire Button */}
                 <div className='border sm:flex hidden rounded-md border-hoverColor transition-transform transform duration-500 ease-in-out hover:scale-110 h-[3rem]  items-center justify-center text-hoverColor w-[10rem] hover:bg-hoverColor hover:text-white'>
                     <button>
-                        ENQUIRE NOW
+                        <Link to={'/contactus'}>ENQUIRE NOW</Link>
                     </button>
                 </div>
             </div>
@@ -55,12 +57,24 @@ function NavBar() {
             <div className={`md:hidden  ${popUpMenu ? '' : 'hidden'}`}>
                 <div className='flex flex-col items-center py-4 space-y-4 bg-black'>
                     <ul className='space-y-2'>
-                        <li className='hover:text-hoverColor cursor-pointer'>Home</li>
-                        <li className='hover:text-hoverColor cursor-pointer'>About Us</li>
-                        <li className='hover:text-hoverColor cursor-pointer'>Services</li>
-                        <li className='hover:text-hoverColor cursor-pointer'>Packages</li>
-                        <li className='hover:text-hoverColor cursor-pointer'>Pages</li>
-                        <li className='hover:text-hoverColor cursor-pointer'>Contact Us</li>
+                        <li className='hover:text-hoverColor cursor-pointer'>
+                            <Link to={'/'}>Home</Link>
+                        </li>
+                        <li className='hover:text-hoverColor cursor-pointer'>
+                            <Link to={'/aboutus'}>About Us</Link>
+                        </li>
+                        <li className='hover:text-hoverColor cursor-pointer'>
+                            <Link to={'/services'} > Services </Link>
+                        </li>
+                        <li className='hover:text-hoverColor cursor-pointer'>
+                            <Link to={'/packages'}> Packages </Link>
+                        </li>
+                        <li className='hover:text-hoverColor cursor-pointer'>
+                            <Link to={'/blogs'}>Blogs</Link>
+                        </li>
+                        <li className='hover:text-hoverColor cursor-pointer'>
+                            <Link to={'/contactus'}>Contact Us</Link>
+                        </li>
                     </ul>
                     <div className='border rounded-md border-hoverColor transition-transform transform duration-500 ease-in-out hover:scale-110 h-[3rem] flex items-center justify-center text-hoverColor w-[10rem] hover:bg-hoverColor hover:text-white'>
                         <button>

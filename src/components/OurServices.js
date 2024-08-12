@@ -28,7 +28,7 @@ function OurServices() {
                     </p>
                 </div>
 
-                <button className='border m-3 text-white outline-none border-none rounded-md bg-hoverColor w-[10rem] h-[3rem]'>VIEW SERVICES</button>
+                <button className='border transition-all hover:scale-105 duration-500 m-3 text-white outline-none border-none rounded-md bg-hoverColor w-[10rem] h-[3rem]'>VIEW SERVICES</button>
 
             </div>
 

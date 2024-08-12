@@ -6,19 +6,19 @@ import poilet from '../assets/F-8.jpg';
 
 function LuxuryCharter() {
     return (
-        <div className='bg-white min-h-screen  w-full p-[2rem]'>
+        <div className='bg-white flex flex-col justify-around  min-h-screen  w-full p-[2rem]'>
             <div className=' flex flex-col items-center justify-center '>
-                <h1 className='text-xl text-hoverColor mb-4'>
-                    OUR LUXURY CHARTER
-                </h1>
-                <h2 className='text-[3rem] text-black mb-6'>
-                    We Provide Luxury Deals for You
+
+                <h2 className='text-[3rem] text-hoverColor mb-6'>
+                    OUR LUXURY FLEETS
                 </h2>
+                {/* 
                 <div className='p-4 rounded-lg max-w-4xl mx-auto'>
                     <p className='text-center text-gray-300 text-lg'>
                         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit doloribus porro vero! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et suscipit vel tempore quas.
                     </p>
-                </div>
+                </div> */}
+
             </div>
 
             <div className='flex justify-around py-10 flex-wrap'>

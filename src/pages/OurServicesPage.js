@@ -10,8 +10,8 @@ import { FaCarAlt } from "react-icons/fa";
 
 
 import imag from '../assets/F-2.jpg'
-import AirportCount from './AirportCount';
-import LearnMore from './LearnMore';
+import AirportCount from '../components/AirportCount';
+import LearnMore from '../components/LearnMore';
 import TellUs from '../subComponents/Blog/TellUs';
 
 

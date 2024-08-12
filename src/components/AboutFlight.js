@@ -66,7 +66,7 @@ function AboutFlight() {
                                 </p>
                             </div>
                             <div className="m-3">
-                                <button className="w-full md:w-[10rem] border text-hoverColor border-hoverColor h-[3em]">
+                                <button className="w-full md:w-[10rem] border hover:scale-105 rounded-lg transition-all duration-300 hover:bg-hoverColor hover:text-white text-hoverColor border-hoverColor h-[3em]">
                                     VIEW ABOUT
                                 </button>
                             </div>

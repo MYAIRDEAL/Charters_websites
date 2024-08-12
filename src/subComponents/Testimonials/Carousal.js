@@ -14,7 +14,7 @@ function Carousal() {
     const fetchExperience = async () => {
       try {
         const response = await axios.get('http://localhost:8000/api/admin/getallfeedback');
-        console.log(response.data)
+        // console.log(response.data)
         setCustomerExperience(response.data.feedback);
       } catch (error) {
         message.error('Server is Busy!!!');

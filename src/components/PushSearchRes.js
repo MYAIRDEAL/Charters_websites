@@ -22,7 +22,7 @@ function PushSearchRes() {
     }
 
     return (
-        <div className='bg-white min-h-screen  w-full p-[2rem]'>
+        <div className='bg-white mt-[10rem] 1024:mt-0 1024:h-auto  w-full p-[2rem]'>
             <div className=' flex flex-col items-center justify-center '>
                 <h1 className='text-xl text-hoverColor mb-4'>
                     OUR LUXURY CHARTER
@@ -38,7 +38,7 @@ function PushSearchRes() {
             </div>
 
 
-            <div className=' flex flex-wrap w-full p-[2rem] bg-white justify-center items-center md:justify-start md:gap-5 gap-7'>
+            <div className=' flex flex-wrap w-full p-[2rem] bg-white justify-center items-center md:justify-start 1024:gap-5 gap-7 768:gap-0'>
                 <FightCard props={tempFlightData} />
                 <FightCard props={tempFlightData} />
                 <FightCard props={tempFlightData} />

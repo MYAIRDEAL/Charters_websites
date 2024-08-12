@@ -6,7 +6,7 @@ import light from '../assets/F-10.jpg'
 import { FaCircleCheck } from "react-icons/fa6";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import { FaPlay } from "react-icons/fa";
-import PageBanner from '../components/PageBanner';
+import PageBanner from './PageBanner';
 
 function PackagePage() {
     return (

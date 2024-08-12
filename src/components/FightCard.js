@@ -23,7 +23,7 @@ function FightCard({ props }) {
                 ({discount})
             </p>
 
-            <button className='bg-hoverColor w-[9rem] h-[2rem] text-white rounded-lg transition-all hover:scale-110 duration-700'>
+            <button className='bg-hoverColor w-[9rem] h-[2.5rem] text-white rounded-lg transition-all hover:scale-110 duration-700'>
                 Book for ${bookfor}
             </button>
         </div>

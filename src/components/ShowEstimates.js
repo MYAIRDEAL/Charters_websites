@@ -1,15 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { DatePicker } from 'antd';
+import { DatePicker, message } from 'antd';
 import 'antd/dist/reset.css'; // Import Ant Design styles
-
-
 import { IoMdSwap } from "react-icons/io";
 import { IoIosArrowDown } from "react-icons/io";
 import { RiFlightTakeoffFill } from "react-icons/ri";
-
 import '../componentCss/ShowEstimatesCss.css'
-
-// const { RangePicker } = DatePicker;
+import axios from 'axios';
 
 const ShowEstimates = () => {
     const [dateData, setDate] = useState(null);
@@ -18,66 +14,71 @@ const ShowEstimates = () => {
         setDate(dateString);
     };
 
+    const [fromValue, setFromValue] = useState('Bangalore');
+    const [toValue, setToValue] = useState('Dubai');
+    const [selectType, setSelectType] = useState('Jet');
+    const [formData, setFormData] = useState(null); // Initialize with null
 
-    const [fromValue, setFromValue] = useState('VOBL');
-    const [toValue, setToValue] = useState('OMDW');
-
-    // Function to handle input value change
     const handleFromChange = (e) => setFromValue(e.target.value);
     const handleToChange = (e) => setToValue(e.target.value);
 
-    // Function to swap values
     const handleSwap = () => {
         setFromValue(toValue);
         setToValue(fromValue);
     };
 
-
-    const [selectType, setSelectType] = useState('jet');
-
-    useEffect(() => {
-        console.log(selectType)
-    }, [selectType])
-
-    const [selectTypePopUp, setSelectTypePopUp] = useState(false)
+    const [selectTypePopUp, setSelectTypePopUp] = useState(false);
     const dropdownRef = useRef(null);
 
-    // Handle clicking outside to close the dropdown
     const handleClickOutside = (event) => {
         if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
             setSelectTypePopUp(false);
         }
     };
 
-    // Close dropdown after selecting an option
     const handleOptionClick = (option) => {
         setSelectType(option);
         setSelectTypePopUp(false);
     };
 
-    // Add event listener for clicks outside
-    React.useEffect(() => {
+    useEffect(() => {
         document.addEventListener('mousedown', handleClickOutside);
         return () => document.removeEventListener('mousedown', handleClickOutside);
     }, []);
 
-
-    // Fetching the Booking Data
-
     const formHandler = (element) => {
-        element.preventDefault()
-        let name = element.target.name.value
-        let email = element.target.email.value
-        let to = element.target.to.value
-        let from = element.target.from.value
-        let phone = element.target.phone.value
-        let passengers = element.target.passengers.value
-        let date = dateData
+        element.preventDefault();
+        let name = element.target.name.value;
+        let email = element.target.email.value;
+        let to = element.target.to.value;
+        let from = element.target.from.value;
+        let phone = element.target.phone.value;
+        let passengers = element.target.passengers.value;
+        let date = dateData;
+        let section = selectType.toLowerCase().replace(/\s+/g, '')
 
-        let postData = { name, email, to, from, phone, passengers, date, selectType }
-        console.log(postData)
-    }
+        let postData = { name, email, to, from, phone, passengers, date, section };
+        setFormData(postData);
+    };
 
+    useEffect(() => {
+        const sendData = async () => {
+            if (formData) {
+                try {
+                    let response = await axios.post('http://localhost:8000/api/admin/demandsearch', formData);
+                    message.success('Request successful');
+                    // console.log(response.data);
+                } catch (error) {
+                    message.error('Server is Busy try after some time');
+                }
+                console.log(formData)
+            }
+        };
+
+        sendData();
+    }, [formData]);
+
+    console.log(selectType)
 
     return (
         <div className=' md:h-[50vh] h[30vh] w-full p-4 flex flex-col justify-center items-center'>
@@ -85,11 +86,10 @@ const ShowEstimates = () => {
 
             <div className=' w-[75%] font-semibold md:flex hidden'>
                 <button className={` w-[10rem] h-[2.5rem] outline-none mx-3 text-white rounded-lg transition-all duration-700 ${selectType === 'jet' ? 'bg-hoverColor text-white' : 'border-2 border-hoverColor'}`} onClick={(e) => setSelectType(e.target.innerText.toLowerCase())} >Jet</button>
-                <button className={` w-[10rem] h-[2.5rem] mx-3 outline-none  rounded-lg  text-white transition-all duration-700 ${selectType === 'helicoptor' ? 'bg-hoverColor text-white' : 'border-2 border-hoverColor'}`} onClick={(e) => setSelectType(e.target.innerText.toLowerCase())} >Helicoptor</button>
+                <button className={` w-[10rem] h-[2.5rem] mx-3 outline-none  rounded-lg  text-white transition-all duration-700 ${selectType === 'helicopter' ? 'bg-hoverColor text-white' : 'border-2 border-hoverColor'}`} onClick={(e) => setSelectType(e.target.innerText.toLowerCase())} >Helicopter</button>
             </div>
 
             <div className='w-[80%] md:hidden flex flex-col relative' ref={dropdownRef}>
-                {/* Dropdown Toggle */}
                 <div
                     className='w-[50%] flex items-center justify-around rounded-lg bg-hoverColor text-white cursor-pointer'
                     onClick={() => setSelectTypePopUp(prev => !prev)}
@@ -98,7 +98,6 @@ const ShowEstimates = () => {
                     <IoIosArrowDown />
                 </div>
 
-                {/* Dropdown Menu */}
                 <div
                     className={`absolute w-[50%] mt-2 rounded-lg bg-selectType ${selectTypePopUp ? 'block' : 'hidden'} z-10`}
                     style={{ top: '100%' }}
@@ -127,24 +126,19 @@ const ShowEstimates = () => {
                 </div>
             </div>
 
-            <form action="#" onSubmit={formHandler} >
-
+            <form action="#" method='post' onSubmit={formHandler}>
                 <div className="form">
-
-
-                    <div id='first' >
-                        <label htmlFor='from' className='flex gap-4'>FROM {<RiFlightTakeoffFill />} To</label>
-                        <div id='oneinnerdiv' >
+                    <div id='first'>
+                        <label htmlFor='from' className='flex gap-4'>Origin {<RiFlightTakeoffFill />} Departure</label>
+                        <div id='oneinnerdiv'>
                             <input
                                 type='text'
                                 name='from'
                                 id='from'
                                 placeholder='VOBL'
                                 value={fromValue} onChange={handleFromChange}
-
                             />
-                            <IoMdSwap id='icon' onClick={handleSwap} />
-
+                            <IoMdSwap id='icon' onClick={handleSwap} className='cursor-pointer' />
                             <input
                                 type='text'
                                 name='to'
@@ -156,38 +150,33 @@ const ShowEstimates = () => {
                         </div>
                     </div>
 
-
-                    <div className='second' >
-                        <label htmlFor='departure'>DEPARTURE</label>
+                    <div className='second'>
+                        <label htmlFor='departure'>Date</label>
                         <DatePicker
                             showTime
                             format='DD-MM-YYYY HH:mm'
                             id='date'
                             onChange={onChange}
                         />
-
                     </div>
 
                     <div className='third'>
-                        <label htmlFor='passengers'>PASSENGERS</label>
+                        <label htmlFor='passengers'>Passengers</label>
                         <input
                             type='number'
                             name='passengers'
                             placeholder='0'
-
                         />
                     </div>
 
-                    <div className='fourth' >
+                    <div className='fourth'>
                         <label htmlFor='phone'>Phone</label>
                         <input
                             type='number'
                             name='phone'
                             placeholder='9876745329'
-
                         />
                     </div>
-
 
                     <div className='five'>
                         <label htmlFor='email'>Email</label>
@@ -195,35 +184,25 @@ const ShowEstimates = () => {
                             type='email'
                             name='email'
                             placeholder='abc@gmail.com'
-
                         />
                     </div>
 
-
-                    <div className='six' >
+                    <div className='six'>
                         <label htmlFor='name'>Name</label>
                         <input
                             type='text'
                             name='name'
                             placeholder='Jon'
-
                         />
                     </div>
 
-                    <div className='seven' >
-                        <button
-                            type='submit'
-
-                        >
+                    <div className='seven hover:scale-105 duration-200'>
+                        <button type='submit'>
                             SHOW ESTIMATES
                         </button>
                     </div>
-
-
                 </div>
-
             </form>
-
         </div>
     );
 };
