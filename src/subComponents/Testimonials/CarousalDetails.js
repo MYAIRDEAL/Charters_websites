@@ -1,10 +1,5 @@
 import React from 'react'
 
-
-
-
-
-
 function CarousalDetails() {
     return (
 

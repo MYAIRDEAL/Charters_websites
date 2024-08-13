@@ -10,19 +10,18 @@ function Carousal() {
   const [customerExperience, setCustomerExperience] = useState([]);
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  // useEffect(() => {
-  //   const fetchExperience = async () => {
-  //     try {
-  //       const response = await axios.get('http://localhost:8000/api/admin/getallfeedback');
-  //       // console.log(response.data)
-  //       setCustomerExperience(response.data.feedback);
-  //     } catch (error) {
-  //       message.error('Server is Busy!!!');
-  //     }
-  //   };
+  useEffect(() => {
+    const fetchExperience = async () => {
+      try {
+        const response = await axios.get('http://localhost:8000/api/admin/getallfeedback');
+        setCustomerExperience(response.data.feedback);
+      } catch (error) {
+        message.error('Server is Busy!!!');
+      }
+    };
 
-  //   fetchExperience();
-  // }, []);
+    fetchExperience();
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {

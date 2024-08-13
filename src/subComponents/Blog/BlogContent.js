@@ -10,7 +10,6 @@ import lady from '../../assets/F-9.jpg'
 import sofa from '../../assets/F-20.jpg'
 import TellUs from './TellUs';
 
-import fram from '../../assets/flightBack.jpg'
 import AirportCount from '../../components/AirportCount';
 
 function BlogContent() {
@@ -138,10 +137,6 @@ function BlogContent() {
             <AirportCount />
             <TellUs />
         </div>
-
-
-
-
 
     )
 }

@@ -10,7 +10,7 @@ import PushSearchRes from './PushSearchRes';
 import OurFleets from './OurFleets';
 import axios from 'axios';
 import { message } from 'antd';
-// import OurFleetsDetails from '../pages/OurFleetsDetails';
+import OurFleetsDetails from '../pages/OurFleetsDetails';
 
 function MainHomeComp() {
 

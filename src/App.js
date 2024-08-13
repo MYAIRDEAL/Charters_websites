@@ -15,6 +15,8 @@ import OurServicesPage from '../src/pages/OurServicesPage';
 import PackagePage from '../src/pages/PackagePage';
 import AdminPanel from './components/AdminPanel';
 import LogUserActivity from './components/LogUserActivity';
+import OurFleetsPage from './pages/OurFleetsPage';
+import OurFleetsDetails from './pages/OurFleetsDetails';
 
 
 function App() {
@@ -36,13 +38,12 @@ function App() {
           <Route path='/adminsectioncontroller' element={<AdminPanel />} />
           <Route path='/contactus' element={<ContactUs />} />
           <Route path='/allavailablecharters' element={<AllAvailableCharters />} />
+          <Route path='/ourfleets/:type' element={<OurFleetsPage />} />
+          <Route path='/ourfleetsdetails' element={<OurFleetsDetails />} />
         </Routes>
 
         <Footer />
       </Router>
-
-
-
 
 
 

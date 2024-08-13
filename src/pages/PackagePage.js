@@ -86,11 +86,6 @@ flex flex-col justify-end' style={{
 
                     </div>
 
-
-
-
-
-
                 </div>
 
 
@@ -148,11 +143,6 @@ flex flex-col justify-end' style={{
 
 
                     </div>
-
-
-
-
-
 
                 </div>
 

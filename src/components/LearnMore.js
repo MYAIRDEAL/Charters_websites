@@ -4,7 +4,7 @@ function LearnMore() {
     return (
 
 
-        <div className='360:h-[200vh] 380:h-[170vh]  700:h-[90vh] 900:h-[60vh] 1024:h-[60vh] 1487:h-[100vh] flex items-center 375:mb-[5rem] md:mt-[0rem] bg-white  flex-wrap justify-around'>
+        <div className='360:h-[230vh] 380:h-[178vh] 540:h-[201vh]  700:h-[90vh] 900:h-[60vh] 1024:h-[60vh] 1487:h-[100vh] flex items-center 375:mb-[5rem] md:mt-[0rem] bg-white  flex-wrap justify-around'>
 
             <div className=' w-[30rem] flex flex-col px-6 md:mx-6 mt-6 '>
                 <div>

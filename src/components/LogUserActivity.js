@@ -20,9 +20,6 @@ const LogUserActivity = () => {
             setUserLog((previousData) => (
                 previousData += cleanedPath
             ))
-            console.log(cleanedPath)
-
-            console.log(userLog)
         };
 
         logUserActivity(location.pathname);
