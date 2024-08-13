@@ -145,10 +145,6 @@ const Footer = () => {
 
             </div>
 
-
-
-
-
         </footer>
     );
 };

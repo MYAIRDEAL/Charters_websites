@@ -12,12 +12,12 @@ function LuxuryCharter() {
                 <h2 className='text-[3rem] text-hoverColor mb-6'>
                     OUR LUXURY FLEETS
                 </h2>
-                {/* 
+                
                 <div className='p-4 rounded-lg max-w-4xl mx-auto'>
                     <p className='text-center text-gray-300 text-lg'>
                         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit doloribus porro vero! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et suscipit vel tempore quas.
                     </p>
-                </div> */}
+                </div>
 
             </div>
 

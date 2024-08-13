@@ -17,7 +17,7 @@ const ShowEstimates = () => {
     const [fromValue, setFromValue] = useState('Bangalore');
     const [toValue, setToValue] = useState('Dubai');
     const [selectType, setSelectType] = useState('Jet');
-    const [formData, setFormData] = useState(null); // Initialize with null
+    const [formData, setFormData] = useState(null); 
 
     const handleFromChange = (e) => setFromValue(e.target.value);
     const handleToChange = (e) => setToValue(e.target.value);
@@ -55,7 +55,7 @@ const ShowEstimates = () => {
         let phone = element.target.phone.value;
         let passengers = element.target.passengers.value;
         let date = dateData;
-        let section = selectType.toLowerCase().replace(/\s+/g, '')
+        let section = selectType.toLowerCase().replace(/\s+/g, '').slice(0, 3)
 
         let postData = { name, email, to, from, phone, passengers, date, section };
         setFormData(postData);
@@ -67,23 +67,20 @@ const ShowEstimates = () => {
                 try {
                     let response = await axios.post('http://localhost:8000/api/admin/demandsearch', formData);
                     message.success('Request successful');
-                    // console.log(response.data);
                 } catch (error) {
                     message.error('Server is Busy try after some time');
                 }
-                console.log(formData)
             }
         };
 
         sendData();
     }, [formData]);
 
-    console.log(selectType)
 
     return (
         <div className=' md:h-[50vh] h[30vh] w-full p-4 flex flex-col justify-center items-center'>
             <h1 className='text-[2.5rem] text-white font-semibold'>Private Jet Charters</h1>
-
+            
             <div className=' w-[75%] font-semibold md:flex hidden'>
                 <button className={` w-[10rem] h-[2.5rem] outline-none mx-3 text-white rounded-lg transition-all duration-700 ${selectType === 'jet' ? 'bg-hoverColor text-white' : 'border-2 border-hoverColor'}`} onClick={(e) => setSelectType(e.target.innerText.toLowerCase())} >Jet</button>
                 <button className={` w-[10rem] h-[2.5rem] mx-3 outline-none  rounded-lg  text-white transition-all duration-700 ${selectType === 'helicopter' ? 'bg-hoverColor text-white' : 'border-2 border-hoverColor'}`} onClick={(e) => setSelectType(e.target.innerText.toLowerCase())} >Helicopter</button>

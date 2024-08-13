@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 
 import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
 
@@ -16,7 +16,7 @@ function PageBanner({data}) {
         >
             <div className="flex items-center justify-between p-[3rem] h-full text-white">
 
-                <div className='text-[5vw]'>
+                <div className='text-[4vw]'>
                     <h1>
                         {data}
                     </h1>

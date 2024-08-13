@@ -81,11 +81,6 @@ function OurPackage() {
 
                 </div>
 
-
-
-
-
-
             </div>
 
 
@@ -143,9 +138,6 @@ function OurPackage() {
 
 
                 </div>
-
-
-
 
 
 

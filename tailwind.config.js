@@ -18,6 +18,7 @@ module.exports = {
         '700': '700px', // Custom breakpoint for min-width: 500px
         '900': '900px', // Custom breakpoint for min-width: 500px
         '1487': '1487px', // Custom breakpoint for min-width: 500px
+        '540': '540px', // Custom breakpoint for min-width: 500px
       },
     },
   },

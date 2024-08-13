@@ -10,14 +10,12 @@ function NavBar() {
     return (
         <nav className=' text-white'>
             <div className='flex items-center justify-between h-[5rem] px-4 md:px-8'>
-                {/* Logo */}
                 <div className='w-[10rem] h-[4rem] flex items-center justify-center cursor-pointer'>
                     <Link to={'/'}>
                         <img src={heroicon} alt="Logo" className='h-full object-contain' />
                     </Link>
                 </div>
 
-                {/* Toggle Button for Mobile Menu */}
                 <div className='md:hidden'>
                     <button className='text-white' onClick={() => {
                         if (popUpMenu == true) {

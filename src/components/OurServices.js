@@ -10,7 +10,7 @@ import imag from '../assets/F-2.jpg'
 function OurServices() {
     return (
 
-        <div className='md:h-[150vh] 500:h-[158vh] flex items-center  bg-white justify-around flex-wrap '>
+        <div className='md:h-[150vh]  500:h-[158vh] flex items-center  bg-white justify-around flex-wrap '>
             <div className=' w-[24rem] md:h-[35rem] h-[28rem]  flex flex-col justify-center'>
                 <div>
                     <h1 className='text-hoverColor m-3'>
@@ -27,7 +27,7 @@ function OurServices() {
                         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae quo ab modi necessitatibus ipsam fugiat quis? Ipsam, dolorem sunt repudiandae, culpa ea, esse quibusdam reiciendis consequuntur reprehenderit quis aliquam aperiam! Nostrum laborum laboriosam alias.
                     </p>
                 </div>
-
+                
                 <button className='border transition-all hover:scale-105 duration-500 m-3 text-white outline-none border-none rounded-md bg-hoverColor w-[10rem] h-[3rem]'>VIEW SERVICES</button>
 
             </div>
