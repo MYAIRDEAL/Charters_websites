@@ -6,7 +6,7 @@ import poilet from '../assets/F-8.jpg';
 
 function LuxuryCharter() {
     return (
-        <div className='bg-white flex flex-col justify-around  min-h-screen  w-full p-[2rem]'>
+        <div className='bg-white flex flex-col justify-around  min-h-screen m-0  w-full p-[2rem]'>
             <div className=' flex flex-col items-center justify-center '>
 
                 <h2 className='text-[3rem] text-hoverColor mb-6'>
@@ -22,7 +22,7 @@ function LuxuryCharter() {
             </div>
 
             <div className='flex justify-around py-10 flex-wrap'>
-                <div className='rounded-xl font-semibold p-6 max-w-md flex flex-col justify-end bg-cover bg-center mb-4 md:mb-0 h-[400px] w-[450px]' style={{ backgroundImage: `linear-gradient( rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) ), url(${airbus})` }}>
+                <div className='rounded-xl font-semibold p-6 max-w-md flex  flex-col justify-end bg-cover bg-center mb-4 md:mb-0 h-[400px] w-[450px]' style={{ backgroundImage: `linear-gradient( rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) ), url(${airbus})` }}>
                     <div >
                         <h1 className='text-2xl text-white mb-2'>Airbus A380 - All Surya</h1>
                         <h2 className='text-hoverColor text-xl mb-4'>Nomaden 900</h2>

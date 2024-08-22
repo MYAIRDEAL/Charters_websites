@@ -7,17 +7,19 @@ import { RiFlightTakeoffFill } from "react-icons/ri";
 import '../componentCss/ShowEstimatesCss.css'
 import axios from 'axios';
 
+import { useNavigate } from 'react-router-dom'; // Import correctly
+
 const ShowEstimates = () => {
-    const [dateData, setDate] = useState(null);
+    const [dateData, setDate] = useState('');
 
     const onChange = (date, dateString) => {
         setDate(dateString);
     };
 
-    const [fromValue, setFromValue] = useState('Bangalore');
-    const [toValue, setToValue] = useState('Dubai');
-    const [selectType, setSelectType] = useState('Jet');
-    const [formData, setFormData] = useState(null); 
+    const [fromValue, setFromValue] = useState('Goa');
+    const [toValue, setToValue] = useState('Hyderabad');
+    const [selectType, setSelectType] = useState('');
+    const [formData, setFormData] = useState(null);
 
     const handleFromChange = (e) => setFromValue(e.target.value);
     const handleToChange = (e) => setToValue(e.target.value);
@@ -31,7 +33,7 @@ const ShowEstimates = () => {
     const dropdownRef = useRef(null);
 
     const handleClickOutside = (event) => {
-        if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        if (dropdownRef.current && !dropdownRef.current.contains(event?.target)) {
             setSelectTypePopUp(false);
         }
     };
@@ -41,6 +43,8 @@ const ShowEstimates = () => {
         setSelectTypePopUp(false);
     };
 
+
+
     useEffect(() => {
         document.addEventListener('mousedown', handleClickOutside);
         return () => document.removeEventListener('mousedown', handleClickOutside);
@@ -48,25 +52,44 @@ const ShowEstimates = () => {
 
     const formHandler = (element) => {
         element.preventDefault();
-        let name = element.target.name.value;
-        let email = element.target.email.value;
-        let to = element.target.to.value;
-        let from = element.target.from.value;
-        let phone = element.target.phone.value;
-        let passengers = element.target.passengers.value;
-        let date = dateData;
-        let section = selectType.toLowerCase().replace(/\s+/g, '').slice(0, 3)
 
-        let postData = { name, email, to, from, phone, passengers, date, section };
-        setFormData(postData);
+        const capitalizeFirstLetter = (word) => {
+            return word.charAt(0).toUpperCase() + word.slice(1);
+        };
+
+        let arrival = capitalizeFirstLetter(element.target?.to?.value);
+        let departure = capitalizeFirstLetter(element.target?.from?.value);
+        let pax = element.target?.passengers?.value;
+        let date = dateData;
+        let section = selectType;
+
+        let postData = { arrival, departure, pax, date, section };
+
+        if (arrival?.length !== 0 && departure?.length !== 0 && pax?.length !== 0 && date?.length !== 0 && section?.length !== 0) {
+            setFormData(postData);
+        }
+        else {
+            message.error('Fill All the Details or Select Valid Type')
+            setFormData(false);
+        }
+
     };
+
+    const navigate = useNavigate(); // Initialize correctly
 
     useEffect(() => {
         const sendData = async () => {
             if (formData) {
                 try {
-                    let response = await axios.post('http://localhost:8000/api/admin/demandsearch', formData);
-                    message.success('Request successful');
+
+                    // Serialize the response if it's an object
+                    const responseData = JSON.stringify(formData);
+
+                    // Encode the data to make it URL-safe
+                    const encodedData = encodeURIComponent(responseData);
+
+                    navigate(`/subcategory/${encodedData}`); // Passing encoded data in URL
+
                 } catch (error) {
                     message.error('Server is Busy try after some time');
                 }
@@ -76,14 +99,50 @@ const ShowEstimates = () => {
         sendData();
     }, [formData]);
 
+    const [getType, setGetType] = useState([])
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                let temp = await axios.get('http://localhost:8000/api/admin/getalltypes');
+                setGetType(temp.data?.data || []);
+            } catch (error) {
+                message.error('Server is Busy try after some time');
+            }
+        };
+
+        fetchData();
+    }, []);
+
+
 
     return (
-        <div className=' md:h-[50vh] h[30vh] w-full p-4 flex flex-col justify-center items-center'>
-            <h1 className='text-[2.5rem] text-white font-semibold'>Private Jet Charters</h1>
-            
+        <div className=' 700:h-[50vh] 1024:h-[30vh] 1487:h-[50vh] w-full p-4 flex flex-col justify-center items-center'>
+            <h1 className='md:text-[2.5rem] text-[1.5rem] text-white font-semibold'>Private Jet Charters</h1>
+
             <div className=' w-[75%] font-semibold md:flex hidden'>
-                <button className={` w-[10rem] h-[2.5rem] outline-none mx-3 text-white rounded-lg transition-all duration-700 ${selectType === 'jet' ? 'bg-hoverColor text-white' : 'border-2 border-hoverColor'}`} onClick={(e) => setSelectType(e.target.innerText.toLowerCase())} >Jet</button>
-                <button className={` w-[10rem] h-[2.5rem] mx-3 outline-none  rounded-lg  text-white transition-all duration-700 ${selectType === 'helicopter' ? 'bg-hoverColor text-white' : 'border-2 border-hoverColor'}`} onClick={(e) => setSelectType(e.target.innerText.toLowerCase())} >Helicopter</button>
+                {
+                    getType?.length > 0 ? (
+                        getType.map((e) => {
+                            if (e.active === 'yes') {
+                                return (
+                                    <button
+                                        className={`w-[10rem] h-[2.5rem] mx-3 outline-none rounded-lg text-white transition-all duration-700 ${selectType === e.section ? 'bg-hoverColor text-white' : 'border-2 border-hoverColor'}`}
+                                        onClick={() => setSelectType(e.section)}
+                                        key={e._id}
+                                    >
+                                        {e.section}
+                                    </button>
+                                );
+                            }
+                            return null;
+                        })
+
+                    ) :
+                        (
+                            <p className='text-hoverColor'>No Type Available</p>
+                        )
+                }
             </div>
 
             <div className='w-[80%] md:hidden flex flex-col relative' ref={dropdownRef}>
@@ -100,33 +159,39 @@ const ShowEstimates = () => {
                     style={{ top: '100%' }}
                 >
                     <ul className='list-none p-0 m-0'>
-                        <li
-                            className={`text-[1.2rem] transition-all duration-300 text-white py-2 pl-5 ${selectType === 'jet' ? 'bg-hoverColor' : ''}`}
-                            onClick={() => handleOptionClick('Jet')}
-                        >
-                            Jet
-                        </li>
-                        <li
-                            className={`text-[1.2rem] transition-all duration-300 text-white py-2 pl-5 ${selectType === 'air ambulance' ? 'bg-hoverColor' : ''}`}
-                            onClick={() => handleOptionClick('Air Ambulance')}
-                        >
-                            Air Ambulance
-                        </li>
-                        <li
-                            className={`text-[1.2rem] transition-all duration-300 text-white py-2 pl-5 ${selectType === 'charter' ? 'bg-hoverColor' : ''}`}
-                            onClick={() => handleOptionClick('Charter')}
-                        >
-                            Charter
-                        </li>
+
+                        {
+                            getType?.length > 0 ? (
+                                getType.map((element , index) => {
+
+                                    if (element.active === 'yes') {
+                                        return (
+                                            <li
+                                                className={`text-[1.2rem] transition-all duration-300 text-white py-2 pl-5 ${selectType === `${element.section}` ? 'bg-hoverColor' : ''}`}
+                                                onClick={() => handleOptionClick(`${element.section}`)}
+                                                key={index}
+                                            >
+                                                {element.section}
+                                            </li>
+                                        );
+                                    }
+                                    return null;
+                                })
+
+                            ) :
+                                (
+                                    <p className='text-hoverColor'>No Type Available</p>
+                                )
+                        }
 
                     </ul>
                 </div>
             </div>
 
             <form action="#" method='post' onSubmit={formHandler}>
-                <div className="form">
+                <div className="form  " >
                     <div id='first'>
-                        <label htmlFor='from' className='flex gap-4'>Origin {<RiFlightTakeoffFill />} Departure</label>
+                        <label htmlFor='from' className='flex gap-4 text-white'>Departure {<RiFlightTakeoffFill />} Arrival</label>
                         <div id='oneinnerdiv'>
                             <input
                                 type='text'
@@ -135,7 +200,9 @@ const ShowEstimates = () => {
                                 placeholder='VOBL'
                                 value={fromValue} onChange={handleFromChange}
                             />
-                            <IoMdSwap id='icon' onClick={handleSwap} className='cursor-pointer' />
+
+                            <IoMdSwap id='icon' onClick={handleSwap} className='cursor-pointer border-none outline-none' />
+
                             <input
                                 type='text'
                                 name='to'
@@ -147,55 +214,28 @@ const ShowEstimates = () => {
                         </div>
                     </div>
 
-                    <div className='second'>
-                        <label htmlFor='departure'>Date</label>
+                    <div className='second '>
+                        <label htmlFor='departure' >Date</label>
                         <DatePicker
-                            showTime
-                            format='DD-MM-YYYY HH:mm'
+                            format='DD-MM-YYYY'
                             id='date'
                             onChange={onChange}
                         />
                     </div>
 
                     <div className='third'>
-                        <label htmlFor='passengers'>Passengers</label>
+                        <label htmlFor='passengers' >Passengers</label>
                         <input
                             type='number'
                             name='passengers'
                             placeholder='0'
+
                         />
                     </div>
 
-                    <div className='fourth'>
-                        <label htmlFor='phone'>Phone</label>
-                        <input
-                            type='number'
-                            name='phone'
-                            placeholder='9876745329'
-                        />
-                    </div>
-
-                    <div className='five'>
-                        <label htmlFor='email'>Email</label>
-                        <input
-                            type='email'
-                            name='email'
-                            placeholder='abc@gmail.com'
-                        />
-                    </div>
-
-                    <div className='six'>
-                        <label htmlFor='name'>Name</label>
-                        <input
-                            type='text'
-                            name='name'
-                            placeholder='Jon'
-                        />
-                    </div>
-
-                    <div className='seven hover:scale-105 duration-200'>
-                        <button type='submit'>
-                            SHOW ESTIMATES
+                    <div className='seven hover:scale-105  duration-200 ' >
+                        <button type='submit' className='tracking-[0.2rem]' >
+                            SEARCH
                         </button>
                     </div>
                 </div>

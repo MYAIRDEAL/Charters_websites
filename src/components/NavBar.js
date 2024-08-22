@@ -18,7 +18,7 @@ function NavBar() {
 
                 <div className='md:hidden'>
                     <button className='text-white' onClick={() => {
-                        if (popUpMenu == true) {
+                        if (popUpMenu === true) {
                             setpopUpMenu(false)
                         }
                         else {
@@ -50,7 +50,6 @@ function NavBar() {
                     </button>
                 </div>
             </div>
-
             {/* Mobile Menu */}
             <div className={`md:hidden  ${popUpMenu ? '' : 'hidden'}`}>
                 <div className='flex flex-col items-center py-4 space-y-4 bg-black'>
@@ -71,14 +70,18 @@ function NavBar() {
                             <Link to={'/blogs'}>Blogs</Link>
                         </li>
                         <li className='hover:text-hoverColor cursor-pointer'>
-                            <Link to={'/contactus'}>Contact Us</Link>
+                        <Link to={`/contactus`} >Contact Us</Link>
                         </li>
                     </ul>
-                    <div className='border rounded-md border-hoverColor transition-transform transform duration-500 ease-in-out hover:scale-110 h-[3rem] flex items-center justify-center text-hoverColor w-[10rem] hover:bg-hoverColor hover:text-white'>
-                        <button>
-                            ENQUIRE NOW
-                        </button>
-                    </div>
+                    <Link to={`/contactus}`}>
+
+                        <div className='border rounded-md border-hoverColor transition-transform transform duration-500 ease-in-out hover:scale-110 h-[3rem] flex items-center justify-center text-hoverColor w-[10rem] hover:bg-hoverColor hover:text-white'>
+                            <button>
+                                ENQUIRE NOW
+                            </button>
+                        </div>
+
+                    </Link>
                 </div>
             </div>
         </nav>

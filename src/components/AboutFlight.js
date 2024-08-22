@@ -2,6 +2,7 @@ import React from 'react';
 import { FaSignature } from 'react-icons/fa';
 import fram from '../assets/HeroBg.png';
 import piolet from '../assets/F-1-1.jpg';
+import { Link } from 'react-router-dom';
 
 function AboutFlight() {
     return (
@@ -11,7 +12,7 @@ function AboutFlight() {
                     {/* Info section */}
 
 
-                    <div className="bg-hoverColor rounded-md w-full md:w-[25rem] h-auto md:h-[30rem] font-semibold p-4 flex flex-col items-center justify-around mb-4 md:mb-0 md:absolute md:left-[-9rem] md:top-32  ">
+                    <div className="bg-hoverColor rounded-md w-full 1024:w-[25rem]  1024:h-[30rem] 700:w-[18rem] font-semibold p-4 flex flex-col items-center justify-around mb-4 md:mb-0 md:absolute 700:left-[-4rem] 1024:left-[-10rem] 1487:top-[9rem] 700:top-[6rem]  ">
 
 
                         <div className="flex mb-4">
@@ -44,9 +45,9 @@ function AboutFlight() {
                     </div>
 
                     {/* Image and text section */}
-                    <div className="flex flex-col md:flex-row w-full md:w-[80%] items-center md:ml-[8rem]">
+                    <div className="flex flex-col 1487:flex-row w-full  700:w-[100%] 1024:w-[80%] items-center md:ml-[8rem]">
                         <div className="mb-4 md:mb-0">
-                            <img src={piolet} alt="" className="w-full md:w-[458px] h-auto md:h-[610px] rounded-md" />
+                            <img src={piolet} alt="" className="w-full 1024:w-[458px] h-auto 700:h-[30rem] 700:w-[20rem] 1024:h-[610px] rounded-md" />
                         </div>
                         <div className="flex flex-col md:w-[26rem] text-white p-3">
                             <div className="m-3 text-center md:text-left">
@@ -66,9 +67,13 @@ function AboutFlight() {
                                 </p>
                             </div>
                             <div className="m-3">
-                                <button className="w-full md:w-[10rem] border hover:scale-105 rounded-lg transition-all duration-300 hover:bg-hoverColor hover:text-white text-hoverColor border-hoverColor h-[3em]">
-                                    VIEW ABOUT
-                                </button>
+                                <Link to={'/aboutus'}>
+
+                                    <button className="w-full md:w-[10rem] border hover:scale-105 rounded-lg transition-all duration-300 hover:bg-hoverColor hover:text-white text-hoverColor border-hoverColor h-[3em]">
+                                        VIEW ABOUT
+                                    </button>
+
+                                </Link>
                             </div>
                         </div>
                     </div>

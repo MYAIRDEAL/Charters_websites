@@ -1,25 +1,29 @@
-
+import { message } from 'antd';
+import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom'
+import { useLocation } from 'react-router-dom';
 
 const LogUserActivity = () => {
     const location = useLocation();
-    const [userLog, setUserLog] = useState('');
+    const [userLog, setUserLog] = useState('/');
 
     useEffect(() => {
         const logUserActivity = (page) => {
-            // axios.post('/api/logs', { pageVisited: page, action: 'viewed' })
-            //   .catch(err => console.error('Logging failed:', err));
-            const decodedPath = decodeURIComponent(page);
-            // console.log(decodedPath)
+            // Extract the base path
+            const basePath = page?.split('/')[1] ? `/${page.split('/')[1]}` : '/';
 
-            // Remove symbols except slashes
-            const cleanedPath = decodedPath.replace(/[^\w\/]/g, '');
+            setUserLog((previousData) => previousData + basePath);
 
-            
-            setUserLog((previousData) => (
-                previousData += cleanedPath
-            ))
+
+            // Log the base path
+            try {
+                axios.post('http://localhost:8000/api/admin/addlogs', { log: userLog  })
+            }
+            catch (error) {
+                message.error('Log is Failed !!!')
+            }
+
+            // Update the state with the base path
         };
 
         logUserActivity(location.pathname);
@@ -28,4 +32,4 @@ const LogUserActivity = () => {
     return null; // This component does not render anything
 };
 
-export default LogUserActivity
+export default LogUserActivity;

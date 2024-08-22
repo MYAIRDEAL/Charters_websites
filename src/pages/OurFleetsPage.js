@@ -1,35 +1,50 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import fleets1 from '../assets/midsize-800-2.jpeg'
 
 import PageBanner from './PageBanner'
 import OurFleetsCard from './OurFleetsCard'
 import { useParams } from 'react-router-dom'
+import axios from 'axios'
+import { message } from 'antd'
+import ErrorComp from '../components/ErrorComp'
 
 
 function OurFleetsPage() {
 
-    let data = {
-        title: 'Citation Mustang',
-        pax: 4,
-        range: 1150,
-        speed: 340,
-        cabin: 4.48,
-        img: fleets1,
-    }
+
+    const [getSubCategory, setGetSubCategory] = useState([]);
+
+
 
     let { type } = useParams();
+
+    useEffect(() => {
+        let getSubCategory = async () => {
+            try {
+                let temp = await axios.get(`http://localhost:8000/api/admin/filter/${type}`)
+                setGetSubCategory(temp?.data?.sortedData || [])
+            }
+            catch(error){
+                console.log(error)
+            }
+        }
+        getSubCategory()
+
+    }, [])
 
     return (
         <div>
 
             <PageBanner data={'Premium High Class Fleet'} />
-            <div className='md:h-[100vh] 375:h-auto 375:py-4  bg-white flex flex-wrap items-center gap-6 justify-center'>
+            <div className='min-h-[70vh] 375:py-4  bg-white flex flex-wrap items-center gap-6 justify-center'>
 
-
-                <OurFleetsCard data={data} />
-                <OurFleetsCard data={data} />
-                <OurFleetsCard data={data} />
-                <OurFleetsCard data={data} />
+                {
+                    getSubCategory?.length > 0 ? getSubCategory.map((element, index) => (
+                        <OurFleetsCard key={index} props={element} />
+                    ))
+                    : 
+                    <ErrorComp/>
+                }
 
 
 

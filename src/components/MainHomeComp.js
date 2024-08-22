@@ -10,12 +10,12 @@ import PushSearchRes from './PushSearchRes';
 import OurFleets from './OurFleets';
 import axios from 'axios';
 import { message } from 'antd';
-import OurFleetsDetails from '../pages/OurFleetsDetails';
 
 function MainHomeComp() {
 
-
     const [components, setComponents] = useState([]);
+
+
 
     useEffect(() => {
         const fetchComponents = async () => {
@@ -26,7 +26,6 @@ function MainHomeComp() {
                 message.error('Server Down To Switch Components');
             }
         };
-
         fetchComponents();
     }, []);
 
@@ -38,9 +37,7 @@ function MainHomeComp() {
         'LearnMore': LearnMore,
         'OurFleets': OurFleets,
         'PushSearchRes': PushSearchRes,
-        'Testimonials': Testimonials,
-        // 'OurFleetsDetails': OurFleetsDetails,
-        
+        'Testimonials': Testimonials,        
     };
 
 

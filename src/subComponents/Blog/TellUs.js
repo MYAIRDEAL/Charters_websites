@@ -11,11 +11,11 @@ function TellUs() {
                 className='flex md:rounded-lg justify-center items-center flex-col bg-center bg-cover md:w-[90%] md:h-[20rem] p-5'
                 style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(${backflight})` }}
             >
-                <h1 className='text-white text-center md:text-[3rem] p-4'>
+                <h1 className='text-white text-center text-[1.5rem] 1024:text-[2.5rem] p-4'>
                     Tell us your requirements and one of our charter experts will send you a quote.
                 </h1>
 
-                <p className='text-white text-center md:w-[50rem]'>
+                <p className='text-white text-center '>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur condimentum, lacus non faucibus congue, lectus quam viverra nulla, quis egestas neque sapien ac magna.
                 </p>
 

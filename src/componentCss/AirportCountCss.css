@@ -1,7 +1,7 @@
-/* AirportCountCss.css */
+
 .border-animation {
     position: relative;
-    overflow: hidden; /* Ensures the border doesn't overflow */
+    overflow: hidden; 
 }
 
 .border-animation::after {
@@ -10,11 +10,11 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 0.5rem; /* Adjust the height as needed */
-    background-color: var(--hoverColor, #D1AF77);  /* Set your hover color */
+    height: 0.5rem;
+    background-color: var(--hoverColor, #D1AF77);  
     transform: translateX(100%);
     
-    transition: transform 0.3s ease; /* Adjust the duration and easing as needed */
+    transition: transform 0.3s ease; 
 }
 
 .border-animation:hover::after {

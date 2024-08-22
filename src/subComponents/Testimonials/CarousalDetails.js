@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function CarousalDetails() {
     return (
@@ -10,7 +11,7 @@ function CarousalDetails() {
                 </h1>
             </div>
             <div className='m-4'>
-                <h1 className='text-white text-[2.5rem]'>
+                <h1 className='text-white 1487:text-[2.5rem]'>
                     What Cllient Says About Flights
                 </h1>
             </div>
@@ -22,9 +23,13 @@ function CarousalDetails() {
             </div>
 
             <div className='text-hoverColor border-[2px] hover:scale-110 transition-all duration-500 rounded-lg h-[4rem] w-[19rem] hover:bg-hoverColor hover:text-white flex items-center justify-center m-4 my-6 border-hoverColor'>
-                <button className='outline-none border-none text-[0.9rem] p-4 font-semibold tracking-[0.4rem] '>
-                    VIEW TESTIMONIALS
-                </button>
+                <Link to={'/testimonials'}>
+
+                    <button className='outline-none border-none text-[0.9rem] p-4 font-semibold tracking-[0.4rem] '>
+                        VIEW TESTIMONIALS
+                    </button>
+
+                </Link>
             </div>
 
         </div>
