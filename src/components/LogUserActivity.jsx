@@ -8,7 +8,7 @@ const LogUserActivity = () => {
     const [userLog, setUserLog] = useState('/');
 
     useEffect(() => {
-        const logUserActivity = (page) => {
+        const logUserActivity = async (page) => {
             // Extract the base path
             const basePath = page?.split('/')[1] ? `/${page.split('/')[1]}` : '/';
 
@@ -17,10 +17,10 @@ const LogUserActivity = () => {
 
             // Log the base path
             try {
-                axios.post('http://localhost:8000/api/admin/addlogs', { log: userLog  })
+                await axios.post('http://localhost:8000/api/admin/addlogs', { log: userLog })
             }
             catch (error) {
-                message.error('Log is Failed !!!')
+                // ### Nothing we are displaying here because user don't want to know this ###
             }
 
             // Update the state with the base path

@@ -20,7 +20,7 @@ function PushSearchRes() {
                 setPushRes(pushResData.data.data)
             }
             catch (error) {
-                message.error('Unable to fetch the All flight Details')
+                console.error('Unable to fetch the All flight Details')
             }
 
         }

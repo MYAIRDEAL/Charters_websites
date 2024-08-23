@@ -10,8 +10,14 @@ function AllAvailableCharters() {
     useEffect(() => {
 
         let pushSearchResFunction = async () => {
-            let pushResData = await axios.get('http://localhost:8000/api/admin/getallsubcategories')
-            setPushRes(pushResData.data.data)
+           
+            try{
+                let pushResData = await axios.get('http://localhost:8000/api/admin/getallsubcategories')
+                setPushRes(pushResData?.data?.data)
+            }
+            catch(error){
+                console.log(error)
+            }
 
         }
         pushSearchResFunction()

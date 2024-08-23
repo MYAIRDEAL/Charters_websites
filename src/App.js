@@ -12,7 +12,7 @@ import Footer from './components/Footer';
 import Blog from '../src/pages/Blog'
 import AboutUs from './components/AboutUs';
 import OurServicesPage from '../src/pages/OurServicesPage';
-import PackagePage from '../src/pages/PackagePage';
+import PackagePage from './pages/PackagePage';
 import AdminPanel from './components/AdminPanel';
 import LogUserActivity from './components/LogUserActivity';
 import OurFleetsPage from './pages/OurFleetsPage';

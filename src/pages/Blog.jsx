@@ -1,7 +1,7 @@
 import React from 'react'
 
 import BlogContent from '../subComponents/Blog/BlogContent';
-import PageBanner from '../pages/PageBanner';
+import PageBanner from './PageBanner';
 
 function Blog() {
     return (

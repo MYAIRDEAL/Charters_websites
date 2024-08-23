@@ -6,23 +6,33 @@ import { IoIosArrowDown } from "react-icons/io";
 import { RiFlightTakeoffFill } from "react-icons/ri";
 import '../componentCss/ShowEstimatesCss.css'
 import axios from 'axios';
+import moment from 'moment';
 
 import { useNavigate } from 'react-router-dom'; // Import correctly
 
 const ShowEstimates = () => {
-    const [dateData, setDate] = useState('');
+    const [dateData, setDate] = useState(localStorage.getItem('dateData') || '');
 
     const onChange = (date, dateString) => {
         setDate(dateString);
     };
 
-    const [fromValue, setFromValue] = useState('Goa');
-    const [toValue, setToValue] = useState('Hyderabad');
+    const [fromValue, setFromValue] = useState(localStorage.getItem('fromvalue') || 'Goa');
+    const [toValue, setToValue] = useState(localStorage.getItem('tovalue') || 'Hyderabad');
     const [selectType, setSelectType] = useState('');
     const [formData, setFormData] = useState(null);
 
     const handleFromChange = (e) => setFromValue(e.target.value);
     const handleToChange = (e) => setToValue(e.target.value);
+
+    const [passengers, setPassengers] = useState(localStorage.getItem('passengers') || '0');
+
+    useEffect(() => {
+        localStorage.setItem('passengers', passengers)
+        localStorage.setItem('tovalue', toValue)
+        localStorage.setItem('fromvalue', fromValue)
+        localStorage.setItem('dateData', dateData)
+    }, [passengers, toValue, fromValue, dateData])
 
     const handleSwap = () => {
         setFromValue(toValue);
@@ -78,7 +88,7 @@ const ShowEstimates = () => {
     const navigate = useNavigate(); // Initialize correctly
 
     useEffect(() => {
-        const sendData = async () => {
+        const sendData =  () => {
             if (formData) {
                 try {
 
@@ -91,7 +101,7 @@ const ShowEstimates = () => {
                     navigate(`/subcategory/${encodedData}`); // Passing encoded data in URL
 
                 } catch (error) {
-                    message.error('Server is Busy try after some time');
+                    console.error('Server is Busy try after some time');
                 }
             }
         };
@@ -107,7 +117,7 @@ const ShowEstimates = () => {
                 let temp = await axios.get('http://localhost:8000/api/admin/getalltypes');
                 setGetType(temp.data?.data || []);
             } catch (error) {
-                message.error('Server is Busy try after some time');
+                console.error('Server is Busy try after some time');
             }
         };
 
@@ -150,7 +160,7 @@ const ShowEstimates = () => {
                     className='w-[50%] flex items-center justify-around rounded-lg bg-hoverColor text-white cursor-pointer'
                     onClick={() => setSelectTypePopUp(prev => !prev)}
                 >
-                    <p className='mt-2 flex items-center'>{selectType || 'Jet'}</p>
+                    <p className='mt-2 flex items-center'>{selectType || 'Select Type'}</p>
                     <IoIosArrowDown />
                 </div>
 
@@ -162,7 +172,7 @@ const ShowEstimates = () => {
 
                         {
                             getType?.length > 0 ? (
-                                getType.map((element , index) => {
+                                getType.map((element, index) => {
 
                                     if (element.active === 'yes') {
                                         return (
@@ -219,6 +229,7 @@ const ShowEstimates = () => {
                         <DatePicker
                             format='DD-MM-YYYY'
                             id='date'
+                            // value={dateData}
                             onChange={onChange}
                         />
                     </div>
@@ -228,7 +239,9 @@ const ShowEstimates = () => {
                         <input
                             type='number'
                             name='passengers'
+                            value={passengers}
                             placeholder='0'
+                            onChange={(e) => setPassengers(e.target.value)}
 
                         />
                     </div>

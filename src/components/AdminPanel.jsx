@@ -34,20 +34,29 @@ const DraggableItem = ({ name, index, moveItem }) => {
 function AdminPanel() {
     const [components, setComponents] = useState([]);
 
-    useEffect(() => {
-        axios.get('http://localhost:8000/api/components')
-            .then(response => setComponents(response.data))
-            .catch(error => console.error(error));
+    useEffect(async () => {
+        try {
+            await axios.get('http://localhost:8000/api/components')
+                .then(response => setComponents(response.data))
+        } catch (error) {
+
+            console.error(error);
+        }
     }, []);
 
-    const moveItem = (fromIndex, toIndex) => {
+    const moveItem =  async (fromIndex, toIndex) => {
         const updatedComponents = Array.from(components);
         const [movedComponent] = updatedComponents.splice(fromIndex, 1);
         updatedComponents.splice(toIndex, 0, movedComponent);
         setComponents(updatedComponents);
-        axios.post('http://localhost:8000/api/components', updatedComponents)
-            .then(response => console.log(response.data))
-            .catch(error => console.error(error));
+        try {
+            await axios.post('http://localhost:8000/api/components', updatedComponents)
+                .then(response => console.log(response.data))
+        }
+        catch (error) {
+            console.error(error);
+
+        }
     };
 
     return (

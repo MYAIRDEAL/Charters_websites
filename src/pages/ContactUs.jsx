@@ -21,7 +21,8 @@ function ContactUs() {
 
     return (
 
-        <div className='w-full 375:h-[240vh] 400:h-[190vh] 500:h-[210vh] 900:h-[150vh] 1024:h-[170vh] 1487:h-[150vh]  flex flex-col bg-white'>
+        <div className='w-full 375:h-[240vh] 400:h-[190vh] 500:h-[210vh] 800:h-[170vh] 900:h-[150vh] 1024:h-[120vh] 1487:h-[150vh]  flex flex-col bg-white'>
+
             <div
                 className=" h-[60vh]  bg-cover bg-center bg-no-repeat"
                 style={{
