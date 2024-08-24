@@ -20,7 +20,7 @@ const LogUserActivity = () => {
                 await axios.post('http://localhost:8000/api/admin/addlogs', { log: userLog })
             }
             catch (error) {
-                // ### Nothing we are displaying here because user don't want to know this ###
+                // ### Nothing we are displaying here because user don't want to know this Log ###
             }
 
             // Update the state with the base path
