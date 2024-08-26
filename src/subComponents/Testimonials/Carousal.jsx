@@ -21,7 +21,6 @@ function Carousal() {
     };
     fetchExperience();
   }, []);
-
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % customerExperience?.length);
