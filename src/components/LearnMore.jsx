@@ -4,7 +4,7 @@ const LearnMore = ()=> {
     return (
 
 
-        <div className='360:h-[230vh] 380:h-[178vh] 540:h-[201vh]  700:h-[90vh] 900:h-[60vh] 1024:h-[60vh] 1487:h-[90vh] flex items-center  md:mt-[0rem] bg-white  flex-wrap justify-around'>
+        <div className=' flex items-center   bg-white py-[10rem]  flex-wrap justify-around'>
 
             <div className=' w-full 1487:w-[30rem] flex flex-col px-6 md:mx-6 mt-6 '>
                 <div>

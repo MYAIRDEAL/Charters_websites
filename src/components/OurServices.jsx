@@ -11,8 +11,8 @@ import { Link } from 'react-router-dom';
 function OurServices() {
     return (
 
-        <div className='1024:h-[100vh] 700:h-[190vh] 800:h-[150vh] 900:h-[100vh]  500:h-[158vh] 540:h-[240vh] flex items-center   bg-white justify-around flex-wrap '>
-            <div className=' 1024:w-[24rem] 800:w-[100%] 800:p-3 1024:h-[35rem] h-[28rem]  flex flex-col justify-center'>
+        <div className=' flex items-center  py-[4rem] bg-white justify-around flex-wrap  flex-row '>
+            <div className='  h-[28rem]  flex flex-col justify-center min-w-[20rem] w-[30%] 500:w-full 1487:w-[30%]'>
                 <div>
                     <h1 className='text-hoverColor m-3'>
                         OUR SERVICES
@@ -37,7 +37,7 @@ function OurServices() {
 
             </div>
 
-            <div className='bg-gray-100 1024:w-[55%] 700:w-[90%] 700:h-[130vh] 800:h-[100vh] 900:h-[60vh] 1024:h-[89vh] 375:w-full flex flex-wrap items-center bg-cover md:rounded-md  justify-around' style={{
+            <div className=' flex flex-wrap 800:w-[60%] items-center bg-cover md:rounded-md  justify-around' style={{
                 backgroundImage: ` linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ),  url(${imag})`
             }}>
 
@@ -57,7 +57,7 @@ function OurServices() {
 
                 <div className='hover:bg-hoverColor text-white cursor-pointer transition-all duration-500  h-[20rem] md:w-[23rem] m-3 rounded-md'>
                     <div>
-                        <MdOutlineSettingsSuggest className=' 375:w-[2rem] 375:h-[2rem] 380:w-[3rem] 380:h-[3rem] m-3' />
+                        <MdOutlineSettingsSuggest className=' 375:w-[2rem] 375:h-[2rem] 380:w-[3rem] 380:h-[3rem] m-3'/>
                     </div>
                     <div>
                         <h1 className='380:text-xl m-6'>Private Jet Charter</h1>
@@ -86,7 +86,7 @@ function OurServices() {
                         <CgProfile className=' 375:w-[2rem] 375:h-[2rem] 380:w-[3rem] 380:h-[3rem] m-3' />
                     </div>
                     <div>
-                        <h1 className='380:text-xl m-6'>Private Ambulance</h1>
+                        <h1 className=' m-6'>Private Ambulance</h1>
                         <p className='text-lg m-6'>
                             We bring the right people together to challenge established thinking and drive transform in 2020
                         </p>

@@ -8,6 +8,7 @@ import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
 import flightfront from '../assets/F-12.jpg'
 import ContactUsForm from './ContactUsForm';
 import { useParams } from 'react-router-dom';
+import PageBanner from './PageBanner';
 
 function ContactUs() {
     let decodedBookingData = null;
@@ -21,30 +22,13 @@ function ContactUs() {
 
     return (
 
-        <div className='w-full 375:h-[240vh] 400:h-[190vh] 500:h-[210vh] 800:h-[170vh] 900:h-[150vh] 1024:h-[120vh] 1487:h-[150vh]  flex flex-col bg-white'>
+        <div className='w-full   flex flex-col  bg-white'>
 
-            <div
-                className=" h-[60vh]  bg-cover bg-center bg-no-repeat"
-                style={{
-                    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${flightfront})`,
-                }}
-            >
-                <div className="flex items-center justify-between p-[3rem] h-full text-white">
-                    <div className='text-[5vw]'>
-                        <h1>
-                            Contact Us
-                        </h1>
-                    </div>
-                    <div className='md:flex hidden flex-col items-center md:items-start md:justify-center mb-4 md:mb-0'>
-                        <div className='border border-hoverColor m-2 p-2 rounded-full hover:bg-hoverColor cursor-pointer text-xl'>{<FaFacebook />}</div>
-                        <div className='border border-hoverColor m-2 p-2 rounded-full hover:bg-hoverColor cursor-pointer text-xl'>{<FaInstagram />}</div>
-                        <div className='border border-hoverColor m-2 p-2 rounded-full hover:bg-hoverColor cursor-pointer text-xl'>{<FaTwitter />}</div>
-                        <div className='border border-hoverColor m-2 p-2 rounded-full hover:bg-hoverColor cursor-pointer text-xl'>{<FaYoutube />}</div>
-                    </div>
-                </div>
-            </div>
+       
 
-            <div className='flex md:mt-[5rem] flex-wrap  items-center justify-center'>
+            <PageBanner data={'Contact Us'}/>
+
+            <div className='flex md:mt-[5rem] flex-wrap py-[5rem]  items-center justify-center'>
                 <div className=' w-[45rem] flex flex-col items-center justify-center  px-10 '>
                     <div className='my-5'>
                         <h1 className='text-hoverColor text-[1.5rem]' >Phone Number</h1>

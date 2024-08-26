@@ -21,6 +21,7 @@ function Carousal() {
     };
     fetchExperience();
   }, []);
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % customerExperience?.length);
@@ -33,8 +34,8 @@ function Carousal() {
 
   return (
     <div>
-      <div className="relative 1487:w-[55vw] w-[92vw] max-w-[1200px] h-[50vh] overflow-hidden rounded-lg">
-        <div className="relative w-full h-full flex items-center justify-center">
+      <div className="relative 1487:w-[55vw] w-[92vw] max-w-[1200px] min-h-[50vh] h-[50vh] overflow-hidden rounded-lg">
+        <div className="relative w-full  h-full flex items-center justify-center">
           {customerExperience.map((slide, index) => (
             <div
               key={index}

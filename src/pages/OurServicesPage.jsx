@@ -25,7 +25,7 @@ function OurServicesPage() {
             {/* Section Two */}
 
 
-            <div className=' 500:h-[310vh] 700:h-[210vh] 800:h-[170vh] 900:h-[100vh] 1024:h-[100vh] 1487:h-[120vh]  flex  flex-col items-center justify-evenly'>
+            <div className='  flex  flex-col items-center justify-evenly'>
                 <div className=' md:h-[20rem] h-[28rem] w-[100%]  flex flex-col items-center justify-center'>
                     <div>
                         <h1 className='text-hoverColor tracking-[0.3rem] m-3'>
@@ -45,7 +45,7 @@ function OurServicesPage() {
 
                 </div>
 
-                <div className=' md:w-[90%] 375:w-full flex flex-wrap items-center  rounded-md  justify-around' >
+                <div className='  375:w-full flex flex-wrap items-center  rounded-md  justify-around' >
 
                     <div className=' hover:bg-hoverColor text-white  cursor-pointer transition-all duration-500 h-[16rem] md:w-[23rem] m-3 rounded-md'>
 

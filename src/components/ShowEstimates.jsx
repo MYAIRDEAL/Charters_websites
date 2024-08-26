@@ -12,7 +12,6 @@ import { useNavigate } from 'react-router-dom'; // Import correctly
 
 const ShowEstimates = () => {
     const [dateData, setDate] = useState(localStorage.getItem('dateData') || '');
-
     const onChange = (date, dateString) => {
         setDate(dateString);
     };
@@ -127,7 +126,7 @@ const ShowEstimates = () => {
 
 
     return (
-        <div className=' 700:h-[50vh] 1024:h-[30vh] 1487:h-[50vh] w-full p-4 flex flex-col justify-center items-center'>
+        <div className='  w-full py-[3rem] flex flex-col justify-center items-center '>
             <h1 className='md:text-[2.5rem] text-[1.5rem] text-white font-semibold'>Private Jet Charters</h1>
 
             <div className=' w-[75%] font-semibold md:flex hidden'>

@@ -30,7 +30,7 @@ function PushSearchRes() {
 
 
     return (
-        <div className='bg-white 1024:mt-0 1024:h-auto  w-full p-[2rem]'>
+        <div className='bg-white   w-full p-[2rem]'>
             <div className=' flex flex-col items-center justify-center '>
                 <h1 className='text-xl text-hoverColor mb-4'>
                     OUR LUXURY CHARTER
@@ -63,7 +63,7 @@ function PushSearchRes() {
                 // ### Here We doing Conditional Rendering ###
                 pushRes?.length > 3 ?
                     (
-                        <div className='md:mt-5  flex 1487:justify-end  justify-center w-[94%]'>
+                        <div className='md:mt-5  flex   justify-center w-[94%]'>
                             <button className='w-[12rem] h-[3rem] text-[1.1rem] tracking-[0.3rem] bg-hoverColor text-white rounded-lg transition-all hover:scale-110 duration-700'>
                                 <Link to={'/allavailablecharters'} >View More</Link>
                             </button>

@@ -11,7 +11,7 @@ import logo from '../assets/Logo.png'
 
 const Footer = () => {
     return (
-        <footer className="relative md:h-[100vh] md:flex md:items-center py-10 text-white bg-selectType">
+        <footer className="relative md:flex md:items-center py-[5rem] text-white bg-selectType">
             <div className="container flex flex-wrap justify-around mx-auto ">
                 <div className="w-full px-4 mb-6 md:w-1/4">
                     <h1 className="text-2xl font-bold text-hoverColor">

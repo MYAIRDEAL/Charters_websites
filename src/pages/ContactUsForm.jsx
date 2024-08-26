@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import axios from 'axios'
 import { message } from 'antd';
 
@@ -14,6 +14,8 @@ function ContactUsForm({ props }) {
         date: localStorage.getItem('date') || props?.date || '21-09-2023'
     });
 
+
+
     useEffect(() => {
         Object.keys(formData).forEach(key => {
             localStorage.setItem(key, formData[key]);
@@ -27,8 +29,45 @@ function ContactUsForm({ props }) {
         });
     };
 
+    const nameError = useRef();
+    const emailError = useRef();
+    const phoneError = useRef();
+    const typeError = useRef();
+
     const handleSubmit = async (event) => {
         event.preventDefault();
+
+        // Reset errors
+        nameError.current.classList.add('hidden');
+        emailError.current.classList.add('hidden');
+        phoneError.current.classList.add('hidden');
+        typeError.current.classList.add('hidden');
+
+        let isValid = true;
+
+        if (formData.name.length === 0) {
+            nameError.current.classList.remove('hidden');
+            isValid = false;
+        }
+
+        if (formData.email.length === 0) {
+            emailError.current.classList.remove('hidden');
+            isValid = false;
+        }
+
+        if (formData.phone.length === 0) {
+            phoneError.current.classList.remove('hidden');
+            isValid = false;
+        }
+
+        if (formData.type.length === 0) {
+            typeError.current.classList.remove('hidden');
+            isValid = false;
+        }
+
+        if (!isValid) {
+            return; // Stop submission if any validation fails
+        }
 
         try {
             await axios.post('http://localhost:8000/api/admin/addbooking', formData);
@@ -49,6 +88,7 @@ function ContactUsForm({ props }) {
         }
     };
 
+
     function formatDate(date) {
         const day = String(date.getDate()).padStart(2, '0');
         const month = String(date.getMonth() + 1).padStart(2, '0'); // Months are 0-indexed
@@ -61,44 +101,61 @@ function ContactUsForm({ props }) {
     const formattedDate = formatDate(now);
 
     return (
-        <div className='w-[46rem] 375:h-[120vh] 400:h-[90vh] 500:h-[100vh] 768:h-[60vh] flex justify-center flex-col mb-[10rem] md:mb-0'>
+        <div className='w-[46rem]   flex justify-center flex-col'>
             <div>
                 <h1 className='text-hoverColor tracking-[0.5rem] my-7 mx-4'>CONTACT US</h1>
                 <div>
                     <h1 className='md:text-[3vw] text-[2rem] m-3'>Get In Touch.</h1>
                     <form className='flex flex-wrap m-3' onSubmit={handleSubmit}>
-                        <input
-                            type="text"
-                            name='name'
-                            placeholder='Name'
-                            className='344:w-[19rem] 360:w-[20.5rem] m-3 h-[3rem] outline-none border-b-2 border-hoverColor'
-                            onChange={handleChange}
-                            value={formData.name}
-                        />
-                        <input
-                            type="email"
-                            name='email'
-                            placeholder='Email'
-                            className='344:w-[19rem] 360:w-[20.5rem] m-3 h-[3rem]  outline-none border-b-2 border-hoverColor'
-                            onChange={handleChange}
-                            value={formData.email}
-                        />
-                        <input
-                            type="number"
-                            name='phone'
-                            placeholder='Phone'
-                            className='344:w-[19rem] 360:w-[20.5rem] m-3 h-[3rem]  outline-none border-b-2 border-hoverColor'
-                            onChange={handleChange}
-                            value={formData.phone}
-                        />
-                        <input
-                            type="text"
-                            name='type'
-                            placeholder='Mid Size'
-                            className='344:w-[19rem] 360:w-[20.5rem] m-3 h-[3rem] outline-none border-b-2 border-hoverColor'
-                            onChange={handleChange}
-                            value={formData.type}
-                        />
+                        <div className='flex flex-col'>
+                            <input
+                                type="text"
+                                name='name'
+                                placeholder='Name'
+
+                                className={` 344:w-[19rem] 360:w-[20.5rem] m-3 h-[3rem]  outline-none border-b-2 border-hoverColor`}
+                                onChange={handleChange}
+                                value={formData.name}
+                     x       />
+                            <h1 className='mx-3 text-hoverColor hidden' ref={nameError}>Use this Feild</h1>
+                        </div>
+
+                        <div className='flex flex-col'>
+                            <input
+                                type="email"
+                                name='email'
+                                placeholder='Email'
+                                className='344:w-[19rem] 360:w-[20.5rem] m-3 h-[3rem]  outline-none border-b-2 border-hoverColor'
+                                onChange={handleChange}
+                                value={formData.email}
+                            />
+                            <h1 className='mx-3  text-hoverColor hidden' ref={emailError}>Use this Feild</h1>
+                        </div>
+
+                        <div className='flex flex-col'>
+                            <input
+                                type="number"
+                                name='phone'
+                                placeholder='Phone'
+                                className='344:w-[19rem] 360:w-[20.5rem] m-3 h-[3rem]  outline-none border-b-2 border-hoverColor'
+                                onChange={handleChange}
+                                value={formData.phone}
+                            />
+                            <h1 className='mx-3  text-hoverColor hidden' ref={phoneError}>Use this Feild</h1>
+                        </div>
+
+                        <div className='flex flex-col'>
+                            <input
+                                type="text"
+                                name='type'
+                                placeholder='Mid Size'
+                                className='344:w-[19rem] 360:w-[20.5rem] m-3 h-[3rem] outline-none border-b-2 border-hoverColor'
+                                onChange={handleChange}
+                                value={formData.type}
+                            />
+                            <h1 className='mx-3   text-hoverColor hidden' ref={typeError}>Use this Feild</h1>
+                        </div>
+
                         <input
                             type="text"
                             name='departure'

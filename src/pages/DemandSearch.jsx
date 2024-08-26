@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import DemandSearchCards from './DemandSearchCards';
 import PageBanner from './PageBanner';
 import { useParams } from 'react-router-dom';

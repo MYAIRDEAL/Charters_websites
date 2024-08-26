@@ -6,8 +6,8 @@ import { Link } from 'react-router-dom';
 
 function AboutFlight() {
     return (
-        <div id="navHerSection" className="relative md:mt-[0rem] w-[98.8vw] bg-fixed bg-cover bg-center 1487:h-[100vh] bg-black" style={{ backgroundImage: `url(${fram})` }}>
-            <div className="375:relative z-10 overflow-auto 540:h-[200vh] 700:h-[100vh] 1487:h-full md:flex  md:items-center md:justify-center ">
+        <div id="navHerSection" className="relative  w-[98.8vw] bg-fixed bg-cover bg-center py-[4rem]  bg-black" style={{ backgroundImage: `url(${fram})` }}>
+            <div className="375:relative z-10 overflow-auto  md:flex  md:items-center md:justify-center ">
                 <div className="flex flex-col md:flex-row  items-center justify-center md:justify-around p-4 md:p-8 relative z-10">
                     {/* Info section */}
 
@@ -17,12 +17,12 @@ function AboutFlight() {
 
                         <div className="flex mb-4">
                             <FaSignature className="w-[2rem] h-[2rem]" />
-                            {/* <div className="mt-2">
+                            <div className="mt-2">
                                 <h1 className="text-[1.5rem]">Luxury Flight</h1>
                                 <p>
                                     Lorem ipsum dolor sit Lorem ipsum dolor, sit amet consectetur adipisicing elit.
                                 </p>
-                            </div> */}
+                            </div>
                         </div>
                         <div className="flex  mb-4">
                             <FaSignature className="w-[2rem] h-[2rem]" />
