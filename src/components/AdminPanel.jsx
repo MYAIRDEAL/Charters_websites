@@ -75,7 +75,6 @@ function AdminPanel() {
                     ))}
                 </div>
             </DndProvider>
-
         </div>
     );
 }

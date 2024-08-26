@@ -26,7 +26,7 @@ const DemandSearch = () => {
                 setResponseData(response?.data?.data || []);
                 message.success('Request successful');
             } catch (error) {
-                message.error('Server is busy, try again later');
+                //  Handel this error silently
             }
         };
 

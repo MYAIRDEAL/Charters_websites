@@ -48,11 +48,12 @@ function TestimonialsPage() {
                     {
 
                         showAllExp?.length > 0 ? showAllExp.map((element, index) => (
-                            <div className='w-[28rem]' key={index}>
+                            <div className='w-[28rem] border-[2px] border-hoverColor  rounded-lg ' key={index}>
                                 <div>
-                                    <p className='text-gray-400 1487:text-[1.3rem] leading-[2.3rem] p-2 mb-0'>
-                                        {`" ${element.feedback} "`}
-                                    </p>
+                                    <p className='text-gray-400 1487:text-[1.3rem] h-[23.5rem] overflow-hidden leading-[2.3rem] p-2 mb-0'>
+                                        {`" ${element.feedback} "`}   {/* Max Char is 447 */}
+                                    </p> 
+                                    
                                 </div>
                                 <div className='flex items-center '>
                                     <FcBusinessman className='m-4 bg-gray-400 p-1 rounded-full w-[3rem] h-[3rem]' />

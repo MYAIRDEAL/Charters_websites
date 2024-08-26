@@ -1,6 +1,7 @@
 import React from 'react'
 
 import backflight from '../../assets/F-4.jpg'
+import { Link } from 'react-router-dom'
 
 function TellUs() {
     return (
@@ -19,9 +20,13 @@ function TellUs() {
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur condimentum, lacus non faucibus congue, lectus quam viverra nulla, quis egestas neque sapien ac magna.
                 </p>
 
-                <button className=' px-4 py-2 rounded h-[3rem] border tracking-[0.2rem] border-hoverColor text-hoverColor transition-all hover:scale-110 duration-500'>
-                    ENQUIRE NOW
-                </button>
+                <Link to={'/contactus'}>
+
+                    <button className=' px-4 py-2 rounded h-[3rem] border tracking-[0.2rem] border-hoverColor text-hoverColor transition-all hover:scale-110 duration-500'>
+                        ENQUIRE NOW
+                    </button>
+
+                </Link>
             </div>
 
 

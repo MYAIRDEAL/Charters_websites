@@ -47,16 +47,16 @@ function BlogContent() {
                     <div className='m-3'>
                         <h1 className='text-[1.3rem]'>Thinking of a Trip to Asia this…</h1>
                         <p className='text-[1.1rem] text-gray-400'>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In in felis tempor, facilisis mauris quis, volutpat mauris.…
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In in felis tempor, facilisis mauris quis, volutpat mauris.
                         </p>
                     </div>
 
-                    <div className='m-3'>
+                    {/* <div className='m-3'>
                         <button className='flex cursor-pointer text-[1.3rem] items-center  w-[10rem] justify-around text-hoverColor'>
                             READ MORE
                             <MdArrowCircleRight className='w-[1.3rem] h-[1.3rem]' />
                         </button>
-                    </div>
+                    </div> */}
 
                 </div>
 
@@ -82,16 +82,16 @@ function BlogContent() {
                     <div className='m-3'>
                         <h1 className='text-[1.3rem]'> This new tech makes your prop plane… </h1>
                         <p className='text-[1.1rem] text-gray-400'>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In in felis tempor, facilisis mauris quis, volutpat mauris.…
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In in felis tempor, facilisis mauris quis, volutpat mauris.
                         </p>
                     </div>
-
+{/* 
                     <div className='m-3'>
                         <button className='flex text-[1.3rem] cursor-pointer items-center  w-[10rem] justify-around text-hoverColor'>
                             READ MORE
                             <MdArrowCircleRight className='w-[1.3rem] h-[1.3rem]' />
                         </button>
-                    </div>
+                    </div> */}
 
                 </div>
 
@@ -117,16 +117,16 @@ function BlogContent() {
                     <div className='m-3'>
                         <h1 className='text-[1.3rem]'> Working As a Chef on a Private… </h1>
                         <p className='text-[1.1rem] text-gray-400'>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In in felis tempor, facilisis mauris quis, volutpat mauris.…
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In in felis tempor, facilisis mauris quis, volutpat mauris.
                         </p>
                     </div>
 
-                    <div className='m-3'>
+                    {/* <div className='m-3'>
                         <button className='flex text-[1.3rem] cursor-pointer items-center  w-[10rem] justify-around text-hoverColor'>
                             READ MORE
                             <MdArrowCircleRight className='w-[1.3rem] h-[1.3rem]' />
                         </button>
-                    </div>
+                    </div> */}
 
                 </div>
 

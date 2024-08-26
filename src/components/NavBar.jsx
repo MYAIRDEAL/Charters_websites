@@ -70,18 +70,18 @@ function NavBar() {
                             <Link to={'/blogs'}>Blogs</Link>
                         </li>
                         <li className='hover:text-hoverColor cursor-pointer'>
-                        <Link to={`/contactus`} >Contact Us</Link>
+                            <Link to={`/contactus`} >Contact Us</Link>
                         </li>
                     </ul>
-                    <Link to={`/contactus}`}>
 
-                        <div className='border rounded-md border-hoverColor transition-transform transform duration-500 ease-in-out hover:scale-110 h-[3rem] flex items-center justify-center text-hoverColor w-[10rem] hover:bg-hoverColor hover:text-white'>
+                    <div className='border rounded-md border-hoverColor transition-transform transform duration-500 ease-in-out hover:scale-110 h-[3rem] flex items-center justify-center text-hoverColor w-[10rem] hover:bg-hoverColor hover:text-white'>
+                        <Link to={`/contactus`}>
                             <button>
                                 ENQUIRE NOW
                             </button>
-                        </div>
+                        </Link>
+                    </div>
 
-                    </Link>
                 </div>
             </div>
         </nav>

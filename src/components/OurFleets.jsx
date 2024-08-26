@@ -10,13 +10,10 @@ function LuxuryCharter() {
                     OUR LUXURY FLEETS
                 </h2>
             </div>
-            <div className='flex justify-around items-center   flex-wrap 375:h-[24rem]  w-[80vw]'>
+            <div className='flex justify-around items-center    flex-wrap 375:h-[24rem]  w-[80vw]'>
                 <Link to={`/ourfleets/very Lingh Jet`}>
                     <div
-                        className='cursor-pointer font-semibold flex  items-center justify-center h-[5rem] w-[16rem] '
-
-
-                       
+                        className='cursor-pointer font-semibold flex  items-center justify-center hover:border-b-[4px]   border-hoverColor h-[5rem] w-[16rem] '                       
                     >
                         <h1 className='text-white md:text-[1.7rem] text-[1.3rem]'>Very Light Jets</h1>
 
@@ -24,7 +21,7 @@ function LuxuryCharter() {
                 </Link>
                 <Link to={`/ourfleets/mid size`}>
                     <div
-                       className='cursor-pointer font-semibold flex  items-center justify-center h-[5rem] w-[16rem] '
+                       className='cursor-pointer font-semibold flex  items-center justify-center hover:border-b-[4px]  transition-all duration-150   border-hoverColor  h-[5rem] w-[16rem] '
                         
                     >
                         <h1 className='text-white md:text-[1.7rem] text-[1.3rem]'>Mid Size</h1>
@@ -32,7 +29,7 @@ function LuxuryCharter() {
                 </Link>
                 <Link to={`/ourfleets/super lingh jet`}>
                     <div
-                        className='cursor-pointer font-semibold flex  items-center justify-center h-[5rem] w-[16rem] '
+                        className='cursor-pointer font-semibold flex  items-center justify-center hover:border-b-[4px]  transition-all duration-150   border-hoverColor  h-[5rem] w-[16rem] '
                         
                     >
                         <h1 className='text-white md:text-[1.7rem] text-[1.3rem]'>Super Light Jet</h1>
@@ -40,7 +37,7 @@ function LuxuryCharter() {
                 </Link>
                 <Link to={`/ourfleets/turbo prop aircraft`}>
                     <div
-                       className='cursor-pointer font-semibold flex  items-center justify-center h-[5rem] w-[16rem] '
+                       className='cursor-pointer font-semibold flex  items-center justify-center transition-all duration-150 hover:border-b-[4px]  border-hoverColor  h-[5rem] w-[16rem] '
                         
                     >
                         <h1 className='text-white md:text-[1.7rem] text-[1.3rem]'>Turbo prop Aircraft</h1>
