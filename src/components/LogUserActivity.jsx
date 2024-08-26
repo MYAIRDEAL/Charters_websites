@@ -25,7 +25,6 @@ const LogUserActivity = () => {
                 return newLog;
             });
         };
-
         logUserActivity(location.pathname);
     }, [location.pathname]); // Only depends on pathname to trigger effect
 

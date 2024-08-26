@@ -25,9 +25,6 @@ function ErrorComp() {
                 </ul>
 
             </div>
-
-
-
         </div>
 
     )
