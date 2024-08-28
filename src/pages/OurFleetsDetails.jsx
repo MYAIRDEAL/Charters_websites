@@ -29,10 +29,11 @@ function OurFleetsDetails() {
         <div>
             
             <PageBanner data={'Premium High Class Fleet'} />
-            <div className='700:h-[80vh] 1024:h-[70vh] bg-white flex items-center justify-around'>
-                <div className='md:h-[70vh]  gap-1 items-center justify-around flex p-4 pb-10 700:w-[50rem] 1024:w-[100rem]   flex-wrap '>
+            <div className=' bg-white flex items-center justify-around'>
+                <div className=' gap-1 items-center justify-around flex p-4 pb-10 700:w-[50rem] 1024:w-[100rem]   flex-wrap '>
                     <div>
-                        <img src={fleetsimg} alt="" className='w-[37rem] rounded-lg ' />
+                        {/* <img src={fleetsimg} alt="" className='w-[37rem] rounded-lg ' /> */}
+                        <img src={image} alt="" className='w-[37rem] rounded-lg' />
                     </div>
                     <div className=' flex flex-col justify-around md:h-[30rem] md:w-[48rem] md:p-[3rem]'>
                         <div >

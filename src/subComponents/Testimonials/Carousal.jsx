@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { RiDoubleQuotesR } from 'react-icons/ri';
-import { FcIcons8Cup } from 'react-icons/fc';
 import { message } from 'antd';
 import axios from 'axios';
 
@@ -34,21 +33,22 @@ function Carousal() {
 
   return (
     <div>
-      <div className="relative 1487:w-[55vw] w-[92vw] max-w-[1200px] min-h-[50vh] h-[50vh] overflow-hidden rounded-lg">
-        <div className="relative w-full  h-full flex items-center justify-center">
+      <div className="relative 1487:w-[55vw] w-[92vw] max-w-[1200px] min-h-[50vh] h-[80vh] overflow-hidden rounded-lg">
+        <div className="relative w-full  h-[80vh] flex items-center justify-center">
           {customerExperience.map((slide, index) => (
             <div
               key={index}
               className={`absolute inset-0  flex items-center justify-center transition-opacity duration-700 ease-in-out ${index === currentSlide ? 'opacity-100' : 'opacity-0'}`}
             >
-              <div className="md:w-[45rem] h-[19rem] flex flex-col justify-between p-3">
+              <div className="md:w-[45rem] h-[25rem] flex flex-col justify-between p-3">
                 <p className="text-[1.3rem] leading-7 text-gray-400 overflow-hidden">
                   {slide.feedback}
                 </p>
                 <RiDoubleQuotesR className="absolute w-[5rem] h-[5rem] z-5 top-6 left-1 text-hoverColor hidden md:flex" />
                 <div className="flex items-center justify-start md:mt-10">
-                  <div className="bg-white rounded-full h-[4rem] w-[4rem] flex items-center justify-center">
-                    <FcIcons8Cup className="w-[3rem] h-[3rem]" />
+                  <div className=" text-white  flex justify-center p-1 text-[2rem] h-[3rem] w-[3rem] rounded-full bg-hoverColor">
+                    <h1 > {slide.name.slice(0,2)} </h1>
+                    
                   </div>
                   <div className="ml-5 text-white">
                     <h1>{slide.name}</h1>

@@ -11,7 +11,7 @@ function LuxuryCharter() {
                 </h2>
             </div>
             <div className='flex justify-around items-center    flex-wrap   w-[80vw]'>
-                <Link to={`/ourfleets/very Lingh Jet`}>
+                <Link to={`/ourfleets/very light jet`}>
                     <div
                         className='cursor-pointer font-semibold flex  items-center justify-center hover:border-b-[4px]   border-hoverColor h-[5rem] w-[16rem] '                       
                     >
@@ -27,7 +27,7 @@ function LuxuryCharter() {
                         <h1 className='text-white md:text-[1.7rem] text-[1.3rem]'>Mid Size</h1>
                     </div>
                 </Link>
-                <Link to={`/ourfleets/super lingh jet`}>
+                <Link to={`/ourfleets/super light jet`}>
                     <div
                         className='cursor-pointer font-semibold flex  items-center justify-center hover:border-b-[4px]  transition-all duration-150   border-hoverColor  h-[5rem] w-[16rem] '
                         

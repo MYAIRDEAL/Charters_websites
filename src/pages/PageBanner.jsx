@@ -21,16 +21,12 @@ function PageBanner({data}) {
                         {data}
                     </h1>
                 </div>
-
-
                 <div className='md:flex hidden flex-col items-center md:items-start md:justify-center mb-4 md:mb-0'>
                     <div className='border border-hoverColor m-2 p-2 rounded-full hover:bg-hoverColor cursor-pointer text-xl'>{<FaFacebook />}</div>
                     <div className='border border-hoverColor m-2 p-2 rounded-full hover:bg-hoverColor cursor-pointer text-xl'>{<FaInstagram />}</div>
                     <div className='border border-hoverColor m-2 p-2 rounded-full hover:bg-hoverColor cursor-pointer text-xl'>{<FaTwitter />}</div>
                     <div className='border border-hoverColor m-2 p-2 rounded-full hover:bg-hoverColor cursor-pointer text-xl'>{<FaYoutube />}</div>
                 </div>
-
-
             </div>
         </div>
 
