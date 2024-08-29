@@ -123,7 +123,7 @@ function OurFleetsDetails() {
                     </div>
                 </div>
             </div>
-            <div className='700:h-[125vh] 768:h-[100vh] 900:h-[88vh] 1024:h-[90vh]  bg-white flex flex-wrap  shadow-xl items-center justify-around'>
+            <div className=' bg-white flex flex-wrap  shadow-xl items-center justify-around'>
                 <div className=' w-[100%] md:w-[45rem]  p-4'>
                     <h1 className='text-[1.5rem]'>Specifications</h1>
                     <div>
