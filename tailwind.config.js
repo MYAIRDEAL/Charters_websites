@@ -6,6 +6,8 @@ module.exports = {
       colors: {
         hoverColor: '#D1AF77',
         selectType: '#1A1A1A',
+        lable: '#D4B183',
+        error: '#d4c583',
       },
       screens: {
         '344': '344px', // Custom breakpoint for min-width: 412px

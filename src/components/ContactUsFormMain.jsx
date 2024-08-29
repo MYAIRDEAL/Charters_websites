@@ -137,7 +137,7 @@ function ContactUsForm({ props }) {
                             <input
                                 type="text"
                                 name='name'
-                                // placeholder='Name'
+                                placeholder='Name'
                                 required
                                 className={` 344:w-[19rem] my-0  360:w-[20.5rem] mx-3 h-[3rem]  outline-none border-b-2 border-hoverColor`}
                                 onChange={handleChange}
@@ -152,7 +152,7 @@ function ContactUsForm({ props }) {
                                 type="email"
                                 name='email'
                                 required
-                                // placeholder='Email'
+                                placeholder='Email'
                                 className='344:w-[19rem] my-0 360:w-[20.5rem] mx-3 h-[3rem]  outline-none border-b-2 border-hoverColor'
                                 onChange={handleChange}
                                 value={formData.email}
@@ -166,7 +166,7 @@ function ContactUsForm({ props }) {
                                 type="number"
                                 name='phone'
                                 required
-                                // placeholder='Phone'
+                                placeholder='Phone'
                                 className='344:w-[19rem] my-0 360:w-[20.5rem] mx-3 h-[3rem]  outline-none border-b-2 border-hoverColor'
                                 onChange={handleChange}
                                 value={formData.phone}
@@ -180,7 +180,7 @@ function ContactUsForm({ props }) {
                                 type="text"
                                 name='type'
                                 required
-                                // placeholder='Mid Size'
+                                placeholder='Mid Size'
                                 className='344:w-[19rem] my-0 360:w-[20.5rem] mx-3 h-[3rem] outline-none border-b-2 border-hoverColor'
                                 onChange={handleChange}
                                 value={formData.type}
@@ -194,7 +194,7 @@ function ContactUsForm({ props }) {
                                 type="text"
                                 name='departure'
                                 required
-                                // placeholder='Departure'
+                                placeholder='Departure'
                                 className='344:w-[19rem] my-0 360:w-[20.5rem] mx-3 h-[3rem] outline-none border-b-2 border-hoverColor'
                                 onChange={handleChange}
                                 value={formData.departure}
@@ -208,7 +208,7 @@ function ContactUsForm({ props }) {
                                 type="text"
                                 name='arrival'
                                 required
-                                // placeholder='Arrival'
+                                placeholder='Arrival'
                                 className='344:w-[19rem] my-0 360:w-[20.5rem] mx-3 h-[3rem] outline-none border-b-2 border-hoverColor'
                                 onChange={handleChange}
                                 value={formData.arrival}
@@ -223,7 +223,7 @@ function ContactUsForm({ props }) {
                                 type="text"
                                 name='date'
                                 required
-                                // placeholder={formattedDate}
+                                placeholder={formattedDate}
                                 className='344:w-[19rem] my-0 360:w-[20.5rem] mx-3 h-[3rem] outline-none border-b-2 border-hoverColor'
                                 onChange={handleChange}
                                 value={formData.date}
@@ -236,7 +236,7 @@ function ContactUsForm({ props }) {
                                 type="text"
                                 name='passengers'
                                 required
-                                // placeholder='0'
+                                placeholder='0'
                                 className='344:w-[19rem] my-0 360:w-[20.5rem] mx-3 h-[3rem] outline-none border-b-2 border-hoverColor'
                                 onChange={handleChange}
                                 value={formData.passengers}

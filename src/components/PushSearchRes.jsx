@@ -45,7 +45,7 @@ function PushSearchRes() {
                 </div>
             </div>
 
-            <div className=' flex flex-wrap p-[2rem] justify-around  items-center 1487:justify-start '>
+            <div className=' flex flex-wrap p-[2rem] gap-6 justify-center  items-center  '>
 
 
                 {
@@ -63,7 +63,7 @@ function PushSearchRes() {
                 // ### Here We doing Conditional Rendering ###
                 pushRes?.length > 3 ?
                     (
-                        <div className='md:mt-5  flex   justify-center w-[94%]'>
+                        <div className='md:mt-5  flex   justify-end w-[94%]'>
                             <button className='w-[12rem] h-[3rem] text-[1.1rem] tracking-[0.3rem] bg-hoverColor text-white rounded-lg transition-all hover:scale-110 duration-700'>
                                 <Link to={'/allavailablecharters'} >View More</Link>
                             </button>

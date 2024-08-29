@@ -4,135 +4,87 @@ import { LiaCcAmex } from "react-icons/lia";
 import { FaCcMastercard } from "react-icons/fa6";
 import { FaCcVisa } from "react-icons/fa6";
 import { FaRegCopyright } from "react-icons/fa";
+import { TfiLocationPin } from "react-icons/tfi";
+import { TbBrandGmail } from "react-icons/tb";
 import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
 
 
 import logo from '../assets/Logo.png'
 
 const Footer = () => {
+
+
+    const MyAirDealHandleClick = (element) => {
+        let URL = element.target.innerText;
+        // Encode the address for use in a URL
+        const encodedAddress = encodeURIComponent(URL);
+
+        // Generate the URL for Google Maps
+        const mapUrl = `https://www.google.com/maps?q=${encodedAddress}`;
+
+        // Open the map in a new tab
+        window.open(mapUrl);
+        window.open()
+    };
+
+    const EmailContent = "https://mail.google.com/mail/?view=cm&fs=1&to=support@bookmyjet.com&su=Inquiry%20About%20Your%20Services&body=Hello%2C%0D%0A%0D%0AI%20am%20interested%20in%20learning%20more%20about%20your%20services.%20Please%20provide%20me%20with%20additional%20information.%0D%0A%0D%0AThank%20you!"
+
     return (
-        <footer className="relative md:flex md:items-center py-[5rem] text-white bg-selectType">
-            <div className="container flex flex-wrap justify-around mx-auto ">
-                <div className="w-full px-4 mb-6 md:w-1/4">
-                    <h1 className="text-2xl font-bold text-hoverColor">
-                        Quick Links
+        <footer className=" py-[1rem] text-white bg-selectType">
+
+            <div className=" px-10" >
+                <div className=" text-center py-10  ">
+                    <h1 className="text-[5.5vw] font-bold tracking-[0.4rem]">
+                        <a href="#navBar">
+                            Book<span className="text-hoverColor">Any</span>Jet
+                        </a>
                     </h1>
-                    <div>
-                        <ul>
-                            <li className="mb-2">Europe's latest aviation disruptions</li>
-                            <li className="mb-2">Legal notices</li>
-                            <li className="mb-2">Baggage restrictions</li>
-                            <li className="mb-2">Montreal convention</li>
-                            <li className="mb-2">Privacy Policy </li>
-                            <li className="mb-2">GlobeAir CSER roadmap</li>
-                            <li className="mb-2">#WeArePlanetA</li>
-                        </ul>
-                    </div>
-                </div>
-                <div className="w-full px-4 mb-6 md:w-1/4">
-
-
-                    <h1 className="text-2xl font-bold text-hoverColor">
-                        Serices
-                    </h1>
-
-                    <div>
-                        <ul>
-                            <li className="mb-2">Catering</li>
-                            <li className="mb-2">Private Jet Card</li>
-                            <li className="mb-2">Helicopter Charter</li>
-                            <li className="mb-2">Air Cargo by GlobeAir</li>
-                            <li className="mb-2">Maintenance at GlobeAir</li>
-                            <li className="mb-2">Cessna Citation Mustang C510 Base</li>
-                            <li className="mb-2">Training</li>
-                        </ul>
-                    </div>
-
-
                 </div>
 
 
-                <div className="w-full px-4 mb-6 md:w-1/4">
-                    <h1 className="text-2xl font-bold text-hoverColor">About</h1>
-                    <ul>
-                        <li className="mb-2">Partners</li>
-                        <li className="mb-2">Team</li>
-                        <li className="mb-2">News & Press</li>
-                        <li className="mb-2">Blog</li>
-                        <li className="mb-2">Glossary</li>
-                        <li className="mb-2">Our fleet</li>
-                        <li className="mb-2">Private Jet Frequently Asked Questions</li>
-                    </ul>
-                </div>
-
-
-
-                <div className="w-full px-4 mb-6 md:w-1/4 ">
-                    <h1 className="text-2xl font-bold text-hoverColor">Latest news</h1>
-                    <ul className="mt-3">
-                        <li className="mb-2">GlobeAir Expands Operating Hours To Bolzano</li>
-                        <li className="mb-2">GlobeAir & VOO Transform Private Jet Bookings</li>
-                        <li className="mb-2">GlobeAir begins construction on new hangar at Linz Airport</li>
-                        <li className="mb-2">Celebrating 15 Years of Innovation and Excellence</li>
-                    </ul>
-                </div>
-
-
-                <div className="container flex flex-wrap  justify-between  p-4 mx-auto border-b-[2px] border-b-hoverColor">
-
-
-                    <div className="flex md:w-[38%] gap-3 md:gap-0 justify-between">
-                        <div>
-                            <h1 className="text-2xl font-bold text-hoverColor">Legal</h1>
-                            <div>
-                                <ul>
-                                    <li className="mb-2">GlobeAir AG</li>
-                                    <li className="mb-2">Polytec Strasse 1</li>
-                                    <li className="mb-2">A-4063 Horsching</li>
-                                    <li className="mb-2">Austria</li>
-                                    <li className="mb-2">Impressum</li>
-                                </ul>
+                <div>
+                    <div className="flex items-center flex-wrap my-10 justify-evenly gap-10">
+                        <div className=" w-[20rem]">
+                            <div className="flex items-center justify-start ">
+                                <h1 className=" flex text-[1.4rem] font-semibold text-hoverColor">
+                                    <TfiLocationPin />
+                                    INDIA
+                                </h1>
+                            </div>
+                            <div className="text-[1.2rem] hover:underline decoration-hoverColor hover:cursor-pointer" onClick={MyAirDealHandleClick}>
+                                <p className="leading-7 p-2">
+                                    2nd Floorr, Anjali Plaza, Jayanagar, Bangaluru, India - 560076
+                                </p>
+                            </div>
+                            <div className="text-[1.2rem] flex  hover:underline decoration-hoverColor hover:cursor-pointer">
+                                <TbBrandGmail className="m-1 text-hoverColor" />
+                                <a href={EmailContent} target="_blank">
+                                    support@bookmyjet.com
+                                </a>
                             </div>
                         </div>
 
-                        <div>
-                            <h1 className="text-2xl font-bold text-hoverColor">Questions ?</h1>
-                            <div>
-                                <ul>
-                                    <li className="mb-2">Call : +91 8767854532</li>
-                                    <li className="mb-2">WhatsApp : +91 9876346781</li>
-                                    <li className="mb-2">Email : abc@gmail.com</li>
-                                </ul>
+                        <div className=" w-[20rem]">
+                            <div className="flex items-center justify-start ">
+                                <h1 className=" flex text-[1.4rem] font-semibold text-hoverColor">
+                                    <TfiLocationPin />
+                                    DUBAI - UAE
+                                </h1>
+                            </div>
+                            <div className="text-[1.2rem] hover:underline decoration-hoverColor hover:cursor-pointer" onClick={MyAirDealHandleClick}>
+                                <p className="leading-7 p-2">
+                                    I 10,Black 1, Phase 1, Saih Shuaib 2, Dubai, UAE.
+                                </p>
+                            </div>
+                            <div className="text-[1.2rem] flex hover:underline decoration-hoverColor hover:cursor-pointer" >
+                                <TbBrandGmail className="m-1 text-hoverColor" />
+                                <a href={EmailContent} className="flex" target="_blank">
+                                    support@bookmyjet.com
+                                </a>
                             </div>
                         </div>
-                    </div>
 
-                    <div className="md:w-[49%] flex flex-col " >
-                        <div>
-                            <h1 className="text-2xl font-bold text-hoverColor">Payment secured by</h1>
-                            <div className="flex h-[3rem] justify-around w-[13rem] items-center">
-                                <LiaCcAmex className="w-[2rem] h-[2rem]" />
-                                <FaCcVisa className="w-[2rem] h-[2rem]" />
-                                <FaCcMastercard className="w-[2rem] h-[2rem]" />
-                            </div>
-                        </div>
-                    </div>
-
-
-                </div>
-
-
-                <div className="flex md:w-[100%] justify-between items-center p-5">
-                    <div >
-                        <img src={logo} alt="" className="w-[8rem] h-[3rem]" />
-                        <p className="flex gap-2 mt-3">
-                            <FaRegCopyright />
-                            Copyright 2008 - 2024 ClobeAir AG - All rights reserved.
-                        </p>
-                    </div>
-
-                    <div>
-                        <div className='md:flex  flex items-center md:items-start md:justify-center mb-4 md:mb-0'>
+                        <div className=" flex flex-wrap">
                             <div className='border border-hoverColor m-2 p-2 rounded-full hover:bg-hoverColor cursor-pointer text-xl'>{<FaFacebook />}</div>
                             <div className='border border-hoverColor m-2 p-2 rounded-full hover:bg-hoverColor cursor-pointer text-xl'>{<FaInstagram />}</div>
                             <div className='border border-hoverColor m-2 p-2 rounded-full hover:bg-hoverColor cursor-pointer text-xl'>{<FaTwitter />}</div>
@@ -140,9 +92,11 @@ const Footer = () => {
                         </div>
                     </div>
 
+                    <div>
+                        <p>©All Rights Reserved-BookAnyJet</p>
+                    </div>
+
                 </div>
-
-
             </div>
 
         </footer>

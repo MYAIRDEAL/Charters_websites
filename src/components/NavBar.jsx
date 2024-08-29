@@ -9,13 +9,13 @@ function NavBar() {
 
     return (
         <nav className=' text-white'>
-            <div className='flex items-center justify-between h-[5rem] px-4 md:px-8'>
-                <div className='w-[10rem] h-[4rem] flex items-center justify-center cursor-pointer'>
+            <div className='flex items-center justify-between h-[5rem] px-4 md:px-8' id='navBar'>
+                <div className='w-[13rem] h-[4rem]  flex items-center justify-center cursor-pointer'>
                     <Link to={'/'}>
-                        <img src={heroicon} alt="Logo" className='h-full object-contain' />
+                        {/* <img src={heroicon} alt="Logo" className='h-full object-contain' /> */}
+                        <h1 className='text-[2rem] font-bold'>Book<span className='text-hoverColor'>Any</span>Jet</h1>
                     </Link>
                 </div>
-
                 <div className='md:hidden'>
                     <button className='text-white' onClick={() => {
                         if (popUpMenu === true) {

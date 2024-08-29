@@ -27,9 +27,9 @@ function AllAvailableCharters() {
     return (
         <div className='bg-white min-h-screen  w-full p-[2rem]'>
 
-            <h1 className=' text-[2rem] text-hoverColor text-center'>All Available Charters</h1>
+            <h1 className=' text-[2rem] text-hoverColor text-center font-bold'>All Available Charters</h1>
 
-            <div className=' flex flex-wrap w-full p-[2rem] bg-white justify-center items-center md:justify-start md:gap-5 gap-7'>
+            <div className=' flex flex-wrap w-full p-[2rem] justify-center items-center gap-7'>
 
                 {
                     pushRes?.length > 0 && pushRes.map((element, index) => (

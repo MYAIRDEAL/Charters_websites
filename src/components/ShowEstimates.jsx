@@ -6,7 +6,6 @@ import { IoIosArrowDown } from "react-icons/io";
 import { RiFlightTakeoffFill } from "react-icons/ri";
 import '../componentCss/ShowEstimatesCss.css'
 import axios from 'axios';
-import moment from 'moment';
 
 import { useNavigate } from 'react-router-dom'; // Import correctly
 
@@ -87,7 +86,7 @@ const ShowEstimates = () => {
     const navigate = useNavigate(); // Initialize correctly
 
     useEffect(() => {
-        const sendData =  () => {
+        const sendData = () => {
             if (formData) {
                 try {
 
@@ -162,7 +161,6 @@ const ShowEstimates = () => {
                     <p className='mt-2 flex items-center'>{selectType || 'Select Type'}</p>
                     <IoIosArrowDown />
                 </div>
-
                 <div
                     className={`absolute w-[50%] mt-2 rounded-lg bg-selectType ${selectTypePopUp ? 'block' : 'hidden'} z-10`}
                     style={{ top: '100%' }}

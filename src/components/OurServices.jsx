@@ -41,7 +41,7 @@ function OurServices() {
                 backgroundImage: ` linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ),  url(${imag})`
             }}>
 
-                <div className=' hover:bg-hoverColor text-white  cursor-pointer transition-all duration-500 h-[16rem] md:w-[23rem] m-3 rounded-md'>
+                <div className=' hover:bg-hoverColor text-white  cursor-pointer transition-all duration-500 h-[19rem] md:w-[23rem] m-3 rounded-md'>
 
                     <div>
                         <FaPaperPlane className=' 375:w-[2rem] 375:h-[2rem] 380:w-[3rem] 380:h-[3rem] m-3' />
@@ -55,7 +55,7 @@ function OurServices() {
                 </div>
 
 
-                <div className='hover:bg-hoverColor text-white cursor-pointer transition-all duration-500  h-[20rem] md:w-[23rem] m-3 rounded-md'>
+                <div className='hover:bg-hoverColor text-white cursor-pointer transition-all duration-500  h-[19rem] md:w-[23rem] m-3 rounded-md'>
                     <div>
                         <MdOutlineSettingsSuggest className=' 375:w-[2rem] 375:h-[2rem] 380:w-[3rem] 380:h-[3rem] m-3'/>
                     </div>
@@ -68,7 +68,7 @@ function OurServices() {
                 </div>
 
 
-                <div className='hover:bg-hoverColor text-white cursor-pointer transition-all duration-500  h-[16rem] md:w-[23rem] m-3 rounded-md'>
+                <div className='hover:bg-hoverColor text-white cursor-pointer transition-all duration-500  h-[19rem] md:w-[23rem] m-3 rounded-md'>
                     <div>
                         <FaTruckDroplet className=' 375:w-[2rem] 375:h-[2rem] 380:w-[3rem] 380:h-[3rem] m-3' />
                     </div>
@@ -81,7 +81,7 @@ function OurServices() {
                 </div>
 
 
-                <div className='hover:bg-hoverColor text-white cursor-pointer transition-all duration-500 h-[16rem] md:w-[23rem] m-3  rounded-md'>
+                <div className='hover:bg-hoverColor text-white cursor-pointer transition-all duration-500 h-[19rem] md:w-[23rem] m-3  rounded-md'>
                     <div>
                         <CgProfile className=' 375:w-[2rem] 375:h-[2rem] 380:w-[3rem] 380:h-[3rem] m-3' />
                     </div>

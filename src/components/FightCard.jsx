@@ -18,8 +18,8 @@ function FightCard({ props }) {
                 <p>{props?.endtime}</p>
             </div>
             <p>
-                <span className='line-through'>{props?.price}</span>
-                ({props?.discount})
+                <span className='line-through text-hoverColor'>${props?.price} </span>
+                ({props?.discount}%)
             </p>
 
             <Link to={`/contactus/${encodeURIComponent(JSON.stringify(props))}`} >

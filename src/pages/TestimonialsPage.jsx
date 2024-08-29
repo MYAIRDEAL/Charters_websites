@@ -44,7 +44,7 @@ function TestimonialsPage() {
                     </p>
                 </div>
 
-                <div className='flex items-center min-h-[20rem] justify-evenly flex-wrap gap-4 py-4'>
+                <div className='flex items-center min-h-[20rem] justify-evenly flex-wrap gap-4 py-10'>
                     {
 
                         showAllExp?.length > 0 ? showAllExp.map((element, index) => (

@@ -9,6 +9,7 @@ import ShowEstimates from './ShowEstimates';
 import PushSearchRes from './PushSearchRes';
 import OurFleets from './OurFleets';
 import axios from 'axios';
+import ContactusMain from '../components/ContactusMain'
 import { message } from 'antd';
 
 function MainHomeComp() {
@@ -38,6 +39,7 @@ function MainHomeComp() {
         'OurFleets': OurFleets,
         'PushSearchRes': PushSearchRes,
         'Testimonials': Testimonials,        
+        'ContactPage': ContactusMain,        
     };
 
 

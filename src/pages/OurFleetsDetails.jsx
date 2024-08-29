@@ -23,11 +23,11 @@ function OurFleetsDetails() {
     briefData = JSON.parse(decodeURIComponent(moredetails));
 
 
-    const { _id, chartertype, subCategoryName, pax, speed, price, description, image, availability, bookingtype, departure, arrival, journeytype, date, yom, seats, crew, airhosts, levatory, fromtime, endtime, flyingrange, cabinwidth, cabinheight, baggage , cabinlength , pilot , discount , discountprice} = briefData;
+    const { _id, chartertype, subCategoryName, pax, speed, price, description, image, availability, bookingtype, departure, arrival, journeytype, date, yom, seats, crew, airhosts, levatory, fromtime, endtime, flyingrange, cabinwidth, cabinheight, baggage, cabinlength, pilot, discount, discountprice } = briefData;
 
     return (
         <div>
-            
+
             <PageBanner data={'Premium High Class Fleet'} />
             <div className=' bg-white flex items-center justify-around'>
                 <div className=' gap-1 items-center justify-around flex p-4 pb-10 700:w-[50rem] 1024:w-[100rem]   flex-wrap '>
@@ -53,8 +53,6 @@ function OurFleetsDetails() {
                         </div>
 
                         <div className='flex gap-4 flex-wrap'>
-
-
                             <div className='flex gap-2 w-[13rem]'>
 
                                 <RiArmchairLine className='w-[1.5rem] h-[1.5rem]' />
@@ -187,7 +185,7 @@ function OurFleetsDetails() {
 
 
 
-                <ContactUsForm props = {briefData} />
+                <ContactUsForm props={briefData} />
 
 
             </div>
