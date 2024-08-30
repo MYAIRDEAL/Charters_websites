@@ -37,7 +37,7 @@ function OurServices() {
 
             </div>
 
-            <div className=' flex flex-wrap 800:w-[60%] items-center bg-cover md:rounded-md  justify-around' style={{
+            <div className=' flex flex-wrap w-full 1487:w-[60%] items-center  bg-cover md:rounded-md  justify-around' style={{
                 backgroundImage: ` linear-gradient( rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8) ),  url(${imag})`
             }}>
 
@@ -57,7 +57,7 @@ function OurServices() {
 
                 <div className='hover:bg-hoverColor text-white cursor-pointer transition-all duration-500  h-[19rem] md:w-[23rem] m-3 rounded-md'>
                     <div>
-                        <MdOutlineSettingsSuggest className=' 375:w-[2rem] 375:h-[2rem] 380:w-[3rem] 380:h-[3rem] m-3'/>
+                        <MdOutlineSettingsSuggest className=' 375:w-[2rem] 375:h-[2rem] 380:w-[3rem] 380:h-[3rem] m-3' />
                     </div>
                     <div>
                         <h1 className='380:text-xl m-6'>Private Jet Charter</h1>
@@ -86,7 +86,7 @@ function OurServices() {
                         <CgProfile className=' 375:w-[2rem] 375:h-[2rem] 380:w-[3rem] 380:h-[3rem] m-3' />
                     </div>
                     <div>
-                        <h1 className=' m-6'>Private Ambulance</h1>
+                        <h1 className='380:text-xl m-6'>Private Ambulance</h1>
                         <p className='text-lg m-6'>
                             We bring the right people together to challenge established thinking and drive transform in 2020
                         </p>

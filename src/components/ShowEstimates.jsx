@@ -128,7 +128,7 @@ const ShowEstimates = () => {
         <div className='  w-full py-[3rem] flex flex-col justify-center items-center '>
             <h1 className='md:text-[2.5rem] text-[1.5rem] text-white font-semibold'>Private Jet Charters</h1>
 
-            <div className=' w-[75%] font-semibold md:flex hidden'>
+            <div className=' w-[75%] font-semibold md:flex hidden flex-wrap gap-2'>
                 {
                     getType?.length > 0 ? (
                         getType.map((e) => {

@@ -35,7 +35,7 @@ function TestimonialsPage() {
             <div className='bg-white'>
 
 
-                <div className=' flex flex-col items-center justify-center h-[20rem] '>
+                <div className=' flex flex-col items-center justify-center h-[15rem] '>
                     <h1 className='text-hoverColor tracking-[0.4rem]'>TESTIMONIALS</h1>
                     <h1 className='1487:text-[2.5rem]'>What Client Says About Flights
                     </h1>
@@ -48,7 +48,7 @@ function TestimonialsPage() {
                     {
 
                         showAllExp?.length > 0 ? showAllExp.map((element, index) => (
-                            <div className='w-[28rem] border-[2px] border-hoverColor  rounded-lg ' key={index}>
+                            <div className='w-[28rem] m-5 border-[2px] border-hoverColor  rounded-lg ' key={index}>
                                 <div>
                                     <p className='text-gray-400 1487:text-[1.3rem] h-[23.5rem] overflow-hidden leading-[2.3rem] p-2 mb-0'>
                                         {`" ${element.feedback} "`}   {/* Max Char is 447 */}

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 import { LuPhoneCall } from "react-icons/lu";
 import { CgMail } from "react-icons/cg";
@@ -7,8 +7,9 @@ import { FaFacebook, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
 
 import flightfront from '../assets/F-12.jpg'
 import ContactUsForm from '../pages/ContactUsForm';
-import { useParams } from 'react-router-dom';
+import { useParams, useSearchParams } from 'react-router-dom';
 import PageBanner from '../pages/PageBanner';
+import ContactUsFormMain from './ContactUsFormMain';
 
 function ContactusMain() {
     let decodedBookingData = null;
@@ -19,11 +20,23 @@ function ContactusMain() {
     catch (error) {
         console.log(error)
     }
+
+    let { contactus } = useParams(); // Only destructure contactus if you don't need the booking data
+
+    const [isBanner, setIsBanner] = useState('');
+
+    useEffect(() => {
+        setIsBanner(contactus);
+    }, [contactus]); // Updated dependency array
+
     return (
 
-        <div className='w-full   flex flex-col  bg-white'>
+        <div className='w-full   flex flex-col bg-white'>
 
-            {/* <PageBanner data={'Contact Us'}/> */}
+            {
+                isBanner == 'contactuspage' ? <PageBanner data={'Contact Us'} /> : ''
+            }
+
 
             <div className='flex md:mt-[5rem] flex-wrap py-[5rem]  items-center justify-center'>
                 <div className=' w-[45rem] flex flex-col items-center justify-center  px-10 '>
@@ -73,7 +86,7 @@ function ContactusMain() {
                 </div>
 
 
-                <ContactUsForm props={decodedBookingData} />
+                <ContactUsFormMain />
 
             </div>
 

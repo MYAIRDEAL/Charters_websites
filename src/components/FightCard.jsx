@@ -17,9 +17,9 @@ function FightCard({ props }) {
                 <MdOutlineArrowRightAlt className='mb-2' />
                 <p>{props?.endtime}</p>
             </div>
-            <p>
-                <span className='line-through text-hoverColor'>${props?.price} </span>
-                ({props?.discount}%)
+            <p className='text-green-500 font-semibold'>
+                <span className='line-through text-red-400'>${props?.price} </span> 
+                (-{props?.discount}%)
             </p>
 
             <Link to={`/contactus/${encodeURIComponent(JSON.stringify(props))}`} >

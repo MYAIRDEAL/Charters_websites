@@ -19,6 +19,7 @@ import OurFleetsPage from './pages/OurFleetsPage';
 import OurFleetsDetails from './pages/OurFleetsDetails';
 import DemandSearch from './pages/DemandSearch';
 import TestimonialsPage from './pages/TestimonialsPage';
+import ContactusMain from './components/ContactusMain';
 
 
 function App() {
@@ -40,6 +41,7 @@ function App() {
           <Route path='/adminsectioncontroller' element={<AdminPanel />} />
           <Route path='/contactus/:detailsofbooking' element={<ContactUs />} />
           <Route path='/contactus' element={<ContactUs />} />
+          <Route path='/contactusmain/:contactus' element={<ContactusMain />} />
           <Route path='/allavailablecharters' element={<AllAvailableCharters />} />
           <Route path='/ourfleets/:type' element={<OurFleetsPage />} />
           <Route path='/ourfleetsdetails/:moredetails' element={<OurFleetsDetails />} />

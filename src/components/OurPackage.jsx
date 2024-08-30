@@ -28,12 +28,10 @@ function OurPackage() {
 
             <div className=' flex'>
 
-
                 <div className=' text-white md:w-[28rem] w-[22.5rem] h-[85vh] 700:h-[85vh] mb-4 900:h-auto 1024:h-[85vh] md:rounded-xl bg-cover bg-center
                 flex flex-col justify-end' style={{
                         background: ` linear-gradient( rgba(0, 0, 0, 0), rgba(0, 0, 0, 1) ), url(${building})`
                     }} >
-
 
                     <div className=' h-[50vh] flex flex-col justify-around p-10'>
                         <div>
@@ -66,7 +64,6 @@ function OurPackage() {
                                 </li>
                             </div>
                         </div>
-
                         <div className='flex justify-between h-[2.5rem] items-center cursor-pointer text-hoverColor'>
                             <div className='flex cursor-pointer  hover:scale-110 transition-all duration-700 items-center'>
                                 <MdOutlineKeyboardArrowRight className='text-[1.5rem]' />
@@ -83,9 +80,7 @@ function OurPackage() {
 
             </div>
 
-
             <div className=' flex'>
-
 
                 <div className=' text-white md:w-[28rem] w-[22.5rem] h-[85vh] 700:h-[85vh] 900:h-auto 1024:h-[85vh] md:rounded-xl bg-cover bg-center
                 flex flex-col justify-end' style={{

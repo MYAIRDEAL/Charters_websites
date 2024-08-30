@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import FightCard from '../components/FightCard'
 import axios from 'axios'
+import ErrorComp from '../components/ErrorComp'
 
 function AllAvailableCharters() {
 
@@ -10,12 +11,12 @@ function AllAvailableCharters() {
     useEffect(() => {
 
         let pushSearchResFunction = async () => {
-           
-            try{
+
+            try {
                 let pushResData = await axios.get('http://localhost:8000/api/admin/getallsubcategories')
                 setPushRes(pushResData?.data?.data)
             }
-            catch(error){
+            catch (error) {
                 console.log(error)
             }
 
@@ -32,13 +33,13 @@ function AllAvailableCharters() {
             <div className=' flex flex-wrap w-full p-[2rem] justify-center items-center gap-7'>
 
                 {
-                    pushRes?.length > 0 && pushRes.map((element, index) => (
+                    pushRes?.length > 0 ? pushRes.map((element, index) => (
                         < FightCard key={index} props={element} />
                     ))
+                        :
+                        <ErrorComp />
                 }
-
             </div>
-
         </div>
 
     )

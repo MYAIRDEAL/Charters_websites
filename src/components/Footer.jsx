@@ -30,7 +30,7 @@ const Footer = () => {
     const EmailContent = "https://mail.google.com/mail/?view=cm&fs=1&to=support@bookmyjet.com&su=Inquiry%20About%20Your%20Services&body=Hello%2C%0D%0A%0D%0AI%20am%20interested%20in%20learning%20more%20about%20your%20services.%20Please%20provide%20me%20with%20additional%20information.%0D%0A%0D%0AThank%20you!"
 
     return (
-        <footer className=" py-[1rem] text-white bg-selectType">
+        <footer className=" py-[1rem] text-white bg-selectType ">
 
             <div className=" px-10" >
                 <div className=" text-center py-10  ">

@@ -123,7 +123,7 @@ function OurFleetsDetails() {
                     </div>
                 </div>
             </div>
-            <div className=' bg-white flex flex-wrap  shadow-xl items-center justify-around'>
+            <div className=' bg-white flex flex-wrap py-10  shadow-xl items-center justify-around'>
                 <div className=' w-[100%] md:w-[45rem]  p-4'>
                     <h1 className='text-[1.5rem]'>Specifications</h1>
                     <div>
@@ -140,7 +140,7 @@ function OurFleetsDetails() {
                             <h1 className='p-2 bg-gray-200 w-[50%] h-[2rem] m-[0.1rem]'>{speed}</h1>
                         </div>
                         <div className=' flex items-center justify-between'>
-                            <h1 className='p-2 bg-gray-400 w-[50%] h-[2rem] m-[0.1rem]'>Passenger</h1>
+                            <h1 className='p-2 bg-gray-400 w-[50%] h-[2rem] m-[0.1rem]'>Seats</h1>
                             <h1 className='p-2 bg-gray-200 w-[50%] h-[2rem] m-[0.1rem]'>{seats}</h1>
                         </div>
                         <div className=' flex items-center justify-between'>

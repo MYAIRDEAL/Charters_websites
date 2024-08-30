@@ -39,14 +39,14 @@ function NavBar() {
                         <li className='hover:text-hoverColor cursor-pointer hover:scale-105 transition-all duration-200 '> <Link to={'/services'} > Services </Link> </li>
                         <li className='hover:text-hoverColor cursor-pointer hover:scale-105 transition-all duration-200 '> <Link to={'/packages'}> Packages </Link> </li>
                         <li className='hover:text-hoverColor cursor-pointer hover:scale-105 transition-all duration-200 '> <Link to={'/blogs'}>Blogs</Link> </li>
-                        <li className='hover:text-hoverColor cursor-pointer hover:scale-105 transition-all duration-200 '> <Link to={'/contactus'}>Contact Us</Link> </li>
+                        <li className='hover:text-hoverColor cursor-pointer hover:scale-105 transition-all duration-200 '> <Link to={'/contactusmain/contactuspage'}>Contact Us</Link> </li>
                     </ul>
                 </div>
 
                 {/* Enquire Button */}
                 <div className='border sm:flex hidden rounded-md border-hoverColor transition-transform transform duration-500 ease-in-out hover:scale-110 h-[3rem]  items-center justify-center text-hoverColor w-[10rem] hover:bg-hoverColor hover:text-white'>
                     <button>
-                        <Link to={'/contactus'}>ENQUIRE NOW</Link>
+                        <Link to={'/contactusmain/contactuspage'}>ENQUIRE NOW</Link>
                     </button>
                 </div>
             </div>
@@ -70,12 +70,12 @@ function NavBar() {
                             <Link to={'/blogs'}>Blogs</Link>
                         </li>
                         <li className='hover:text-hoverColor cursor-pointer'>
-                            <Link to={`/contactus`} >Contact Us</Link>
+                            <Link to={`/contactusmain/contactuspage`} >Contact Us</Link>
                         </li>
                     </ul>
 
                     <div className='border rounded-md border-hoverColor transition-transform transform duration-500 ease-in-out hover:scale-110 h-[3rem] flex items-center justify-center text-hoverColor w-[10rem] hover:bg-hoverColor hover:text-white'>
-                        <Link to={`/contactus`}>
+                        <Link to={`/contactusmain/contactuspage`}>
                             <button>
                                 ENQUIRE NOW
                             </button>

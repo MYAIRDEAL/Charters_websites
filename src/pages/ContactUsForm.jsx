@@ -128,7 +128,7 @@ function ContactUsForm({ props }) {
     return (
         <div className='w-[46rem]   flex justify-center flex-col'>
             <div>
-                <h1 className='text-hoverColor tracking-[0.5rem] my-7 mx-4'>CONTACT US</h1>
+                <h1 className='text-hoverColor tracking-[0.5rem] my-7 mx-4'>REQUEST A CALL BACK</h1>
                 <div>
                     <h1 className='md:text-[3vw] text-[2rem] m-3'>Get In Touch.</h1>
                     <form className='flex flex-wrap m-3' onSubmit={handleSubmit}>
@@ -175,7 +175,7 @@ function ContactUsForm({ props }) {
                         </div>
 
                         <div className='flex flex-col my-1'>
-                            <label htmlFor="type" className=' text-hoverColor mx-3 text-[1rem]'> Charter Type </label>
+                            <label htmlFor="type" className=' text-hoverColor mx-3 text-[1rem]'>Type Of Service Looking For </label>
                             <input
                                 type="text"
                                 name='type'
