@@ -12,11 +12,14 @@ import Footer from './components/Footer';
 import Blog from '../src/pages/Blog'
 import AboutUs from './components/AboutUs';
 import OurServicesPage from '../src/pages/OurServicesPage';
-import PackagePage from '../src/pages/PackagePage';
+import PackagePage from './pages/PackagePage';
 import AdminPanel from './components/AdminPanel';
 import LogUserActivity from './components/LogUserActivity';
 import OurFleetsPage from './pages/OurFleetsPage';
 import OurFleetsDetails from './pages/OurFleetsDetails';
+import DemandSearch from './pages/DemandSearch';
+import TestimonialsPage from './pages/TestimonialsPage';
+import ContactusMain from './components/ContactusMain';
 
 
 function App() {
@@ -36,21 +39,21 @@ function App() {
           <Route path='/packages' element={<PackagePage />} />
           <Route path='/blogs' element={<Blog />} />
           <Route path='/adminsectioncontroller' element={<AdminPanel />} />
+          <Route path='/contactus/:detailsofbooking' element={<ContactUs />} />
           <Route path='/contactus' element={<ContactUs />} />
+          <Route path='/contactusmain/:contactus' element={<ContactusMain />} />
           <Route path='/allavailablecharters' element={<AllAvailableCharters />} />
           <Route path='/ourfleets/:type' element={<OurFleetsPage />} />
-          <Route path='/ourfleetsdetails' element={<OurFleetsDetails />} />
+          <Route path='/ourfleetsdetails/:moredetails' element={<OurFleetsDetails />} />
+          <Route path='/subcategory/:selecttype' element={<DemandSearch />} />
+          <Route path='/testimonials' element={<TestimonialsPage />} />
         </Routes>
-
         <Footer />
       </Router>
 
 
 
     </div>
-
-    // <Temp/>
-
 
   );
 }
