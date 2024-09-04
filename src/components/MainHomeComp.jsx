@@ -48,11 +48,15 @@ function MainHomeComp() {
 
     return (
         <div className="Home">
-            {components.map((componentId) => {
-                const Component = componentMapping[componentId];
-                return <Component key={componentId} />;
-            })}
-        </div>
+        {components.map((componentId) => {
+            const Component = componentMapping[componentId];
+            if (!Component) {
+                console.error(`Component not found for id: ${componentId}`);
+                return null;
+            }
+            return <Component key={componentId} />;
+        })}
+    </div>
     );
 }
 
