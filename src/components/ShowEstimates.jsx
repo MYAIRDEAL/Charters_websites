@@ -112,7 +112,7 @@ const ShowEstimates = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                let temp = await axios.get('http://localhost:8000/api/admin/getalltypes');
+                let temp = await axios.get('https://privatejetcharters-server-ttz1.onrender.com/api/admin/getalltypes');
                 setGetType(temp.data?.data || []);
             } catch (error) {
                 console.error('Server is Busy try after some time');
