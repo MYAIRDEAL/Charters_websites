@@ -16,7 +16,7 @@ function PushSearchRes() {
         let pushSearchResFunction = async () => {
 
             try {
-                let pushResData = await axios.get('http://localhost:8000/api/admin/getallsubcategories')
+                let pushResData = await axios.get('https://privatejetcharters-server-ttz1.onrender.com/api/admin/getallsubcategories')
                 setPushRes(pushResData.data.data)
             }
             catch (error) {
